@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Michael Garrigan's Portfolio",
+  "main": "main.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "node-sass": "^4.9.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "scss": "node-sass -w scss/ -o dist/css/ --recursive",
+    "start": "nodemon "
+  },
+  "author": "Michael Garrigan",
+  "license": "ISC"
+}

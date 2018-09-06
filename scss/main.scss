@@ -5,6 +5,7 @@
 
 * {
   box-sizing: border-box;
+  // color: $text-color;
 }
 
 body {
@@ -36,7 +37,7 @@ h3 {
 }
 
 a {
-  color: #fff;
+  color: $text-color;
   text-decoration: none;
 }
 
@@ -46,14 +47,9 @@ header {
   width: 100%;
 }
 
-// .text-secondary {
-//   color: $secondary-color;
-//   font-size: 10rem;
-// }
-
 main {
   min-height: calc(100vh - 60px);
-  padding: 4rem;
+  padding: 3rem;
 
   .icons {
     margin-top: 1rem;
@@ -65,25 +61,51 @@ main {
         color: $secondary-color;
         @include easeOut();
       }
+
+      &:active {
+        color: $secondary-color;
+        @include easeOut();
+      }
     }
+  }
+
+  .lg-heading {
+    color: $text-color;
+  }
+
+  .lg-secondary-heading {
+    color: $secondary-color;
+  }
+
+  .sm-heading {
+    color: $text-color;
   }
 
   &#home {
     overflow: hidden;
     h1 {
-      margin-top: 8vh;
+      margin-top: 6vh;
     }
   }
 }
+
 
 // grid 
 .about-info {
   display: grid;
   grid-gap: 30px;
   grid-template-areas: 
-  'bioimage bio bio'
+  'bioimage bio biotext'
   'job1 job2 job3';
   grid-template-columns: repeat(3, 1fr);
+
+  .about-text {
+    color: $text-color;
+  }
+
+  .about-name {
+    font-size: 4rem;
+  }
 
   .bio-image {
     border: 3px solid $secondary-color;
@@ -96,6 +118,9 @@ main {
     font-size: 1.5rem;
     grid-area: bio;
   }
+  .bio-text {
+    grid-area: biotext;
+  }
   .job-1 {
     grid-area: job1;
   }
@@ -105,11 +130,29 @@ main {
   .job-3 {
     grid-area: job3;
   }
+  .job-4 {
+    grid-area: job4;
+  }
+  .job-5 {
+    grid-area: job5;
+  }
   
   .job {
-    background: lighten($primary-color, 5);
+    background: lighten($primary-color, 20);
     border-bottom: 5px solid $secondary-color;
     padding: 0.5rem;
+  }
+
+  .job-head {
+    background-color: $primary-color;
+    color: $text-color;
+    font-size: 2rem;
+  }
+  .job-text {
+    padding: 10px;
+  }
+  .job-link {
+    color: rgb(189, 230, 247);
   }
 }
 
@@ -189,56 +232,31 @@ main {
   padding:10px 0 0 5px;
 }
 
-// For peddle100.png
-// .flex-xs {
-//   align-content: center;
-//   align-items: center;
-//   display: flex;
-//   justify-content: center;
-// }
-// .crank-color-xs {
-//   /* background: url('./xs-blue-crank.png'); */
-//   height: 115px;
-//   width: 100px;
-// }
-
-// .pre-text-xs {
-//   color: rgb(6, 133, 133);
-//   font-family: 'M PLUS Rounded 1c', sans-serif;
-//   font-size: 130px;
-//   padding:10px 5px 0 0;
-// }
-
-// .post-text-xs {
-//   color: rgb(6, 133, 133);
-//   font-family: 'M PLUS Rounded 1c', sans-serif;
-//   font-size: 130px;
-// }
-
-
 // contact page
 .boxes {
   align-items: center;
   display: flex;
+  flex-flow: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 1rem;
 
   div {
-    border: 3px solid #fff;
+    border: 3px solid $text-color;
+    color: $text-color;
     font-size: 2rem;
-    margin-bottom: 0.3rem;
+    margin: 0.5rem 0 !important;
     padding: 1.5rem 2.5rem;
     @include easeOut;
 
     &:hover {
       background: $secondary-color;
       color: set-text-color($secondary-color);
-      padding: 0.5rem 1.5rem;
+    }
 
-      span {
-        color: set-text-color($secondary-color);
-      }
+    &:active {
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
     }
   }
 }

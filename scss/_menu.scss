@@ -22,7 +22,6 @@
     .btn-line {
       // line 1 - rotate
       &:nth-child(1) {
-        color: red;
         transform: rotate(45deg) translate(5px, 5px);
       }
       // line 2 - hide
@@ -31,7 +30,6 @@
       }
       // line 3 - rotate
       &:nth-child(3) {
-        color: red;
         transform: rotate(-45deg) translate(7px, -6px);
       }
     }
@@ -113,9 +111,9 @@
   .nav-link {
     color: set-text-color($primary-color);
     display: inline-block;
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     font-weight: 300;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -128,7 +126,7 @@
 }
 
 // delay each nav item slide
-@for $x from 1 through 4 {
+@for $x from 1 through 5 {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
   }

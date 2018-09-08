@@ -4,10 +4,7 @@
   "description": "Michael Garrigan's Portfolio",
   "main": "main.js",
   "dependencies": {
-    "axios": "^0.18.0",
-    "express": "^4.16.3",
-    "node-sass": "^4.9.2",
-    "path": "^0.12.7"
+    "node-sass": "^4.9.2"
   },
   "devDependencies": {},
   "scripts": {

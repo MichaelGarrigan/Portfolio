@@ -1,24 +1,18 @@
 
 // widescreen
 @include mediaXl {
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  
 }
 
 // desktop & laptop
 @include mediaLg {
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .about-info {
     display: grid;
     grid-gap: 20px;
     grid-template-areas: 
     'bioimage bio'
-    'biotext biotext'
-    'job1 job2 job3';
+    'biotext biotext';
     grid-template-columns: repeat(2, 1fr);
   }
   
@@ -68,16 +62,11 @@
       grid-template-areas:
       'bioimage'
       'bio'
-      'biotext'
-      'job1'
-      'job2'
-      'job3';
+      'biotext';
 
       grid-template-columns: 1fr;
     }
-    .projects {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    
   }
 }
 
@@ -104,9 +93,5 @@
       font-size: 1.4rem;
     }
     
-  }
-
-  .projects {
-    grid-template-columns: 1fr;
   }
 }

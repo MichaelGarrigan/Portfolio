@@ -1,0 +1,196 @@
+@media (min-width: 840px) and (max-width: 1024px) {
+  
+} 
+@media (min-width: 520px) and (max-width: 839px) { 
+  .start {
+    height: 500px;
+  }
+  .header-title-flex {
+    font-size: 3rem;
+    font-weight: 300;
+  }
+  .sub-titles {
+    font-size: .9rem;
+  }
+  /* ABOUT SECTION */
+  .about-bio-section {
+    padding: 0;
+  }
+  .about-text {
+    font-size: 1.2rem;
+  }
+  .bio-image {
+    height: 240px;
+  }
+  .left-quote {
+    font-size: 1.5rem;
+    padding-top: 70px;
+  }
+  .right-quote {
+    font-size: 1.5rem;
+    padding-top: 230px;
+  }
+  .resume-bullet-button {
+    font-size: 1.6rem;
+  }
+
+  /* SKILLS */
+  .skills-title {
+    font-size: 3.2rem;
+  }
+  .skills-icon-flex {
+    font-size: 3rem;
+  }
+  .skills-box {
+    height: 90px;
+    width: 90px;
+  }
+  .skills-item-text {
+    font-size: 1.3rem;
+  }
+  .angular p {
+    font-size: 1.0rem;
+  }
+  .node p {
+    font-size: 1.2rem;
+  }
+
+  /* PORTFOLIO */
+  .work-header {
+    font-size: 3.2rem;
+  }
+  .top-button-text {
+    font-size: 1.0rem;
+  }
+  .project-banner {
+    font-size: 1.5rem;
+  }
+  .project-bullets {
+    font-size: 1.1rem;
+  }
+  .project-button {
+    font-size: 1rem;
+  }
+
+  /* FOOTER */
+  .footer-title {
+    font-size: 1.6rem;
+  }
+  .footer-bullet {
+    font-size: 1.0rem;
+  }
+
+  .svg-hook:after {
+    background: url('../svg/tree-med.svg') left top   no-repeat;
+    margin-left: -10px;
+    /* top: 300px; */
+  }
+  .svg-hook:before {
+    background: url('../svg/star-med.svg') center top   no-repeat;
+    margin-left: -200px;
+  }
+  
+} 
+@media all and (min-width: 300px) and (max-width: 519px) { 
+  .start {
+    height: 400px;
+  }
+  .header-title-flex {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  .sub-titles {
+    font-size: .7rem;
+  }
+  /* ABOUT SECTION */
+  .about-bio-section {
+    padding: 0;
+  }
+  .about-text {
+    font-size: 1.0rem;
+    padding: 2px;
+  }
+  .bio-image {
+    height: 200px;
+    padding: 10px
+  }
+  .left-quote {
+    font-size: 1.0rem;
+    padding-top: 50px;
+  }
+  .right-quote {
+    font-size: 1.0rem;
+    padding-top: 230px;
+  }
+  .resume-bullet-button {
+    font-size: 1.2rem;
+  }
+
+  /* SKILLS */
+  .skills-title {
+    font-size: 3.0rem;
+  }
+  .skills-icon-flex {
+    font-size: 2rem;
+  }
+  .skills-box {
+    height: 70px;
+    width: 70px;
+  }
+  .skills-item-text {
+    font-size: 1.0rem;
+  }
+  .angular p {
+    font-size: .8rem;
+  }
+  .node p {
+    font-size: 1.0rem;
+  }
+
+  /* PORTFOLIO */
+  .work-header {
+    font-size: 2.8rem;
+  }
+  .top-button-text {
+    font-size: .8rem;
+  }
+  .project-banner {
+    font-size: 1.5rem;
+  }
+  .project-bullets {
+    font-size: 1.1rem;
+  }
+  .project-button {
+    font-size: 1rem;
+  }
+  .project-inner-flex {
+    justify-content: center;
+  }
+  .project-about {
+
+    width: 100%;
+  }
+  .project-carousel {
+    display: none;
+    width: 0;
+  }
+
+  /* FOOTER */
+  .footer-title {
+    font-size: 1.2rem;
+  }
+  .footer-bullet {
+    font-size: .7rem;
+  }
+
+  .svg-hook:after {
+    background: url('../svg/tree-sm.svg') left top   no-repeat;
+    margin-left: -10px;
+    /* top: 300px; */
+  }
+  .svg-hook:before {
+    background: url('../svg/star-sm.svg') center top   no-repeat;
+    margin-left: -200px;
+    margin-top: -150px;
+  }
+}

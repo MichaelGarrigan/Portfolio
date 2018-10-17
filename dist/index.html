@@ -1,86 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="css/main.css">
-  <title>Michael's Portfolio</title>
+  <meta name="author" content="Dave Shea">
+  <meta name="description" content="Michael Garrigan's Portfolio.">
+  <meta name="robots" content="all">
+  <title>Michael Garrigan</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="stylesheet" media="screen" href="css/responsive.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
 </head>
 
-<body id="bg-img">
-  <header>
-    <!-- Hamburger Menu -->
-    <div class="menu-btn">
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-      <div class="btn-line"></div>
-    </div>
+<body id="scrolltotop">
+  <div class="page-wrapper">
 
-  <nav class="menu">
+    <section class="start">
+      
+      <header role="banner">
+        <div class="header-title-flex">
+          <div class="title">
+            <p class="title-text">Michael Garrigan</p>
+          </div>
+          
+          <div class="header-subtitle-flex">
+            <h3 class="sub-titles">Software Engineer</h3>
+            <a href="https://github.com/M-garrigan">
+              <i class="fab fa-github"></i>
+            </a>
+            <h3 class="sub-titles">Full Stack Web Developer</h3>
+            <a href="https://www.linkedin.com/in/mgarrigan">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <h3 class="sub-titles">Craftsman</h3>
+          </div>
+
+        </div>
+      </header>
+      </div>
+    </section>
+
+    <div class="main" role="main">
+      <!-- ABOUT SECTION -->
+      <div class="about">
+        
+        <div class="about-bio-section" role="article">
+          <div class="about-bio-left">
+            <img 
+              class="bio-image" 
+              src="img/ProfilePicStanding250.jpg" 
+              alt="bio picture"
+            >
+            <div id="talkbubble">
+              <i class="fas fa-quote-left fa-fw left-quote"></i>
+              <div class="about-text-wrapper">
+                <p class="about-text"> 
+                  I am a craftsman.
+                </p>
+                <p class="about-text"> 
+                  I always have been.
+                </p>
+                <p class="about-text"> 
+                  Creation is one of
+                </p>
+                <p class="about-text"> 
+                  the great joys of life.
+                </p>
+              </div>
+              <i class="fas fa-quote-right fa-fw right-quote"></i>
+            </div>
+          </div>
+          
+          <div class="resume-box">
+            <a class="resume-bullet-button-a" href="resume.html">
+              <div class="resume-bullet-button">  
+                <p class="resume-bullet">Resume</p>
+              </div>
+            </a>
+            
+            <a href="#scrolltowork">
+              <div class="resume-bullet-button">
+                <p class="resume-bullet">My Work</p>
+              </div>
+            </a>
+            <a href="#scrolltocontact">
+              <div class="resume-bullet-button">
+                <p class="resume-bullet">Contact</p>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="skills" role="article">
+        <p class="skills-title">skills ...</p>
+
+        <div class="skills-icon-flex">
+          <div class="skills-box react">
+            <i class="fab fa-react fa-fw"></i>
+            <p class="skills-item-text">REACT</p>
+          </div>
+          <div class="skills-box angular">
+            <i class="fab fa-angular fa-fw"></i>
+            <p class="skills-item-text">ANGULAR</p>
+          </div>
+          <div class="skills-box js">
+            <i class="fab fa-js-square fa-fw"></i>
+            <p class="skills-item-text">ES6 +</p>
+          </div>
+          <div class="skills-box node">
+              <i class="fab fa-node-js fa-fw"></i>
+            <p class="skills-item-text">NODE.js</p>
+          </div>
+        </div>
+        <div class="skills-icon-flex">
+          <div class="skills-box html5">
+            <i class="fab fa-html5 fa-fw"></i>
+            <p class="skills-item-text">HTML5</p>
+          </div>
+          <div class="skills-box css3">
+            <i class="fab fa-css3 fa-fw"></i>
+            <p class="skills-item-text">CSS3</p>
+          </div>
+          <div class="skills-box sql">
+            <i class="fas fa-database fa-fw"></i>
+            <p class="skills-item-text">SQL</p>
+          </div>
+          <div class="skills-box aws">
+              <i class="fab fa-aws fa-fw"></i>
+            <p class="skills-item-text">AWS</p>
+          </div>
+        </div>
+        <div class="skills-icon-flex">
+          <div class="skills-box vue">
+            <i class="fab fa-vuejs fa-fw"></i>
+            <p class="skills-item-text">VUE</p>
+          </div>
+          <div class="skills-box sass">
+            <i class="fab fa-sass fa-fw"></i>
+            <p class="skills-item-text">SASS</p>
+          </div>
+          <div class="skills-box less">
+            <i class="fab fa-less fa-fw"></i>
+            <p class="skills-item-text">LESS</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="work" role="article">
+        
+        <div class="work-header-wrapper">
+          <h3 id="scrolltowork" class="work-header">
+            my portfolio ....
+          </h3>
+          
+          <div class="top-button-flex">
+            <a href="#scrolltotop">
+              <div class="top-button">
+                <i class="fas fa-arrow-up fa-1x"></i>
+                <p class="top-button-text">top</p>
+              </div>
+            </a>
+          </div>
+          
+        </div>
+        
+
+        <!-- peddle -->
+        <div class="project-item-wrapper">
+          <div class="project-inner-flex">
+
+            <div class="project-about">
+              <div class="project-banner">
+                <div class="flex-50">
+                  <p class="pre-text-50">pe</p>
+                  <div class="crank-color-50"></div>
+                  <div class="crank-color-50"></div>
+                  <span class="post-text-50">le</span>
+                </div>
+              </div>
+              <p class="project-bullets">
+                'A C2C Marketplace'
+              </p>
+              <br/>
+              <p class="project-bullets">
+                Tech Stack: 
+              </p>
+              <p class="project-bullets">
+                React/Redux, Express, Node.js
+              </p>
+              <p class="project-bullets">
+                PostgreSQL, AWS 
+              </p>
+              <br/>
+              <p class="project-bullets">
+                Auto Scaling & Load Balancing
+              </p>
+              <p class="project-bullets">
+                Lambda Image Uploading Service, Read/Write Database
+              </p>
+              <div class="project-button-wrapper">
+                <a href="http://justpeddle.com">
+                  <div class="project-live project-button">
+                    <i class="fas fa-eye fa-1x"></i> 
+                    <p>Go to Live</p>
+                  </div>
+                </a>
+                <a href="https://github.com/M-garrigan/Peddle">
+                  <div class="project-sourcecode project-button">
+                    <i class="fab fa-github fa-1x"></i> 
+                    <p>Source Code</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-carousel">
+              <a href="http://justpeddle.com">
+                <img src="img/projects/PeddleHome.jpg" alt="Project">
+              </a>
+            </div>
+          </div>  
+        </div>
+
+        <!-- nyde -->
+        <div class="project-item-wrapper">
+          <div class="project-inner-flex">
+
+            <div class="project-about">
+              <div class="project-banner">
+                <h2>New York Doc Exchange</h2>
+              </div>
+              <p class="project-bullets">
+                'Find a doctor near you'
+              </p>
+              <br/>
+              <p class="project-bullets">
+                Tech Stack: 
+              </p>
+              <p class="project-bullets">
+                React, SQLite3, Express, Node.js
+              </p>
+              <br/>
+              <p class="project-bullets">
+                Auto Complete Input
+              </p>
+              <p class="project-bullets">
+                Google Maps + Geocoding API's
+              </p>
+              <p class="project-bullets">
+                Nodemailer auto email feature
+              </p>
+              <div class="project-button-wrapper">
+                <a href="http://nyde.us">
+                  <div class="project-live project-button">
+                    <i class="fas fa-eye fa-1x"></i> 
+                    <p>Go to Live</p>
+                  </div>
+                </a>
+                <a href="https://github.com/M-garrigan/NYDE">
+                  <div class="project-sourcecode project-button">
+                    <i class="fab fa-github fa-1x"></i> 
+                    <p>Source Code</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+  
+            <div class="project-carousel">
+              <a href="http://nyde.us">
+                <img src="img/projects/nyde-screenshot.jpg" alt="Project">
+              </a>
+            </div>
+          </div>  
+        </div>
+         
+        <!-- vson -->
+        <div class="project-item-wrapper">
+          <div class="project-inner-flex">
+
+            <div class="project-about">
+              <div class="project-banner">
+                <h2>VSON</h2>
+              </div>
+              <br/>
+              <p class="project-bullets">
+                Tech Stack: 
+              </p>
+              <p class="project-bullets">
+                React, D3, SQL, AWS 
+              </p>
+              <br/>
+              <p class="project-bullets">
+                Visualize Census.gov data.
+              </p>
+              <p class="project-bullets">
+                See Population by state or county.
+              </p>
+              <div class="project-button-wrapper">
+                <a href="http://vson.us">
+                  <div class="project-live project-button">
+                    <i class="fas fa-eye fa-1x"></i> 
+                    <p>Go to Live</p>
+                  </div>
+                </a>
+                <a href="https://github.com/M-garrigan/VSON">
+                  <div class="project-sourcecode project-button">
+                    <i class="fab fa-github fa-1x"></i> 
+                    <p>Source Code</p>
+                  </div>
+                </a>
+              </div>
+            </div>
     
-    <div class="menu-branding">
-      <div class="portrait"></div>
-    </div>
-    <ul class="menu-nav">
-      <li class="nav-item current">
-        <a href="index.html" class="nav-link">
-          HOME
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="about.html" class="nav-link">
-          ABOUT
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="resume.html" class="nav-link">
-          RESUME
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="work.html" class="nav-link">
-        WORK
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="contact.html" class="nav-link">
-        CONTACT
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
+            <div class="project-carousel">
+              <a href="http://vson.us">
+                <img src="img/projects/newVSON.jpg" alt="Project">
+              </a>
+            </div> 
+          </div>  
+        </div>
+              
+        <!-- moodvie -->
+        <div class="project-item-wrapper">
+          <div class="project-inner-flex">
 
-  <main id="home">
-    <h1 class="lg-heading">
-      Michael  
-      <span class="lg-secondary-heading">Garrigan</span>
-    </h1>
-    <h2 class="sm-heading">
-      Software Engineer
-    </h2>
-    <h2 class="sm-heading">
-      Full Stack Web Developer
-    </h2>
-    <h2 class="sm-heading">
-      Craftsman
-    </h2>
-    <div class="icons">
-      <a href="https://github.com/M-garrigan">
-        <i class="fab fa-github fa-4x"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/mgarrigan">
-        <i class="fab fa-linkedin fa-4x"></i>
-      </a>
-      <a href="https://twitter.com/mgarrigan99">
-        <i class="fab fa-twitter fa-4x"></i>
-      </a>
-    </div>
-  </main>
+            <div class="project-about">
+              <div class="project-banner">
+                <h2>Moodvie</h2>
+              </div>
+              <p class="project-bullets">
+                'See entertainment based on your mood'
+              </p>
+              <br/>
+              <p class="project-bullets">
+                Tech Stack: 
+              </p>
+              <p class="project-bullets">
+                React, React-Router 4, MongoDB 
+              </p>
+              <br/>
+              <p class="project-bullets">
+                Shows music, movies, plays, books and theatre.
+              </p>
+              <p class="project-bullets">
+                Web scraping by Nightmare.js and Cheerio
+              </p>
+              <div class="project-button-wrapper">
+                <a href="http://moodvie.net">
+                  <div class="project-live project-button">
+                    <i class="fas fa-eye fa-1x"></i> 
+                    <p>Go to Live</p>
+                  </div>
+                </a>
+                <a href="https://github.com/M-garrigan/Moodvie">
+                  <div class="project-sourcecode project-button">
+                    <i class="fab fa-github fa-1x"></i> 
+                    <p>Source Code</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+      
+            <div class="project-carousel">
+              <a href="http://moodvie.net">
+                <img src="img/projects/moodvie-screenshot.jpg" alt="Project">
+              </a>
+            </div>
+          </div>  
+        </div>
+  
+        <div class="top-button-flex">
+          <a href="#scrolltotop">
+            <div class="top-button">
+              <i class="fas fa-arrow-up fa-1x"></i>
+              <p class="top-button-text">top</p>
+            </div>
+          </a>
+        </div>
+        
+      </div>  <!-- end .work -->
+    </div> <!-- end .main -->
+
+    <footer>
+      <div class="footer-wrapper">
+        <div class="footer-left">
+          <h3 class="footer-title">
+            Applications:
+          </h3>
+          <a href="http://justpeddle.com">
+            <p class="footer-bullet">
+              justPeddle.com
+            </p>
+          </a>
+          <a href="http://nyde.us">
+            <p class="footer-bullet">
+              New York Doc Exchange
+            </p>
+          </a>
+          <a href="http://vson.us">
+            <p class="footer-bullet">
+              VSON
+            </p>
+          </a>
+          <a href="http://moodvie.net">
+            <p class="footer-bullet">
+              Moodvie
+            </p>
+          </a>
+        </div>
+
+        <div id="scrolltocontact" class="footer-right">
+          <h3 class="footer-title">
+            Contact:
+          </h3>
+          <p class="footer-bullet">
+            Email: mgarrigan99@gmail.com
+          </p>
+          <p class="footer-bullet">
+            Phone: 570 262 - 5326
+          </p>
+          <a  href="https://www.linkedin.com/in/mgarrigan">
+            <p class="footer-bullet">
+              Linkedin.com/in/mgarrigan
+            </p>
+          </a>
+          <a href="https://github.com/M-garrigan">
+            <p class="footer-bullet">
+              Github.com/M-garrigan
+            </p>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <div class="svg-hook"></div>
+  </div> <!-- end .page-wrapper -->
+  
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+  </script>
   <script src="main.js"></script>
-</body>
+  </body>
 </html>

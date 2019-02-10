@@ -1,0 +1,14 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "Michael Garrigan's Portfolio",
+  "main": "main.js",
+  "repository": "https://github.com/M-garrigan/Portfolio.git",
+  "author": "M-garrigan <mgarrigan99@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}

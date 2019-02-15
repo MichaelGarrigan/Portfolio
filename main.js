@@ -12,8 +12,9 @@ app.get('/', (req, res) => {
   console.log('HOME');
   res.render('pages/index', {user: "michael"})
 });
-app.get('/blog', (req, res) => {
-  console.log('BLOG');
-  res.render('pages/blog')});
+
+app.get('/art', (req, res) => res.render('pages/art'));
+app.get('/blog', (req, res) => res.render('pages/blog'));
+app.get('/resume', (req, res) => res.render('pages/resume'));
 
 app.listen(3300, () => console.log('Express Server listening on port 3300'));

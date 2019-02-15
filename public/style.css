@@ -9,13 +9,15 @@ body {
   width: 100vw;
 }
 a {
-  color: #2babe1;
+  
   text-decoration: none;
 }
 
 /* SVG Background Header */
 #svg-background-header {
+  position: fixed;
   width: 100vw;
+  z-index: 10;
 }
 .flank-header {
   fill: #f7a23b;
@@ -55,34 +57,44 @@ a {
 
 /* Header  */
 .header-main {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
+  z-index: 5;
 }
  
 header {
+  background: #333333;
+  height: 25.5vw;
   margin: 0 auto;  
 }
 
 .header-title-flex {
   align-items: center;
-  color: darkorange;
+  color: #ff8c00;
   display: flex;
   flex-flow: column;
   font-size: 9vw;
   font-weight: 600;
   justify-content: center;
+  
 }
+.header-title-flex > a {
+  color: #ff8c00;
+}
+.title {
+  z-index: 20;
+}
+#link-home {
+  z-index: 20;
+}
+
 .header-subtitle-flex {
   align-items: center;
   display: flex;
   justify-content: space-evenly;
 }
-.header-subtitle-flex a {
-  font-size: 2vw;
-}
-
 .sub-titles {
   color: #bbb3b3;
   font-size: 2vw;

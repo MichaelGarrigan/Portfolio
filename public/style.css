@@ -110,17 +110,18 @@ header {
 /* Splash End */
 
 /* Resume Start */
-.resume-body {
-  height: 100vh;
+
+.resume-main {
+  height: 130vw;
   width: 100vw;
+}
+.resume-offset {
+  height: 25.5vw;
 }
 .resume-wrapper {
   height: 100%;
 }
-.resume-back-button {
-  font-size: 3rem;
-  padding: 40px 0 20px 40px;
-}
+
 /* Resume End */
 
 /* SKILLS START */

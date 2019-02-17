@@ -24,6 +24,7 @@ a {
 }
 .header-link {
   fill: #4682b4;
+  
 }
 #blog-header-text-link {
   font-style:normal;
@@ -61,12 +62,10 @@ a {
   left: 0;
   top: 0;
   width: 100vw;
-  z-index: 5;
+  z-index: 20;
 }
  
 header {
-  background: #333333;
-  height: 25.5vw;
   margin: 0 auto;  
 }
 
@@ -82,12 +81,6 @@ header {
 }
 .header-title-flex > a {
   color: #ff8c00;
-}
-.title {
-  z-index: 20;
-}
-#link-home {
-  z-index: 20;
 }
 
 .header-subtitle-flex {
@@ -110,7 +103,6 @@ header {
 /* Splash End */
 
 /* Resume Start */
-
 .resume-main {
   height: 130vw;
   width: 100vw;
@@ -123,6 +115,18 @@ header {
 }
 /* Resume End */
 
+/* Art Start */
+.art-main {
+  height: 130vw;
+  width: 100vw;
+}
+.art-offset {
+  height: 25.5vw;
+}
+.art-wrapper {
+  height: 100%;
+}
+/* Art End */
 
 /* PEDDLE LOGO 50 */
 .flex-50 {

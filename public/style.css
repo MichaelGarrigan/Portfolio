@@ -155,23 +155,56 @@ header {
 /* THINGS I'VE MADE END */
 
 /* Projects Start */
-.peddle-wrapper {
-  background: white; 
-  opacity: 0.6;
+/* Global projects elements */
+.project-wrapper{
+  align-items: center;
+  display: flex;
+  height: 34vw;
   position: absolute;
+  width: 75vw;
+}
+
+/* 1) Peddle */
+.peddle-wrapper{
   left: 22vw;
   top: 46vw;
-  height: 34vw;
-  width: 61vw;
 }
+.peddle-content, .project-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: space-between;
+  width: 70%
+}
+.peddle-title, .project-title {
+  color: rgb(226, 225, 222);
+  font-size: 6vw;
+}
+.peddle-subtitle, .project-subtitle {
+  color: rgb(226, 225, 222);
+  font-size: 2.2vw;
+}
+.peddle-tech-stack, .project-tech-stack {
+  color: rgb(226, 225, 222);
+  font-size: 2.2vw;
+}
+.desktop-svg {
+  background: url('./desktop.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 5vw;
+  width: 40vw;
+}
+/* 1) Peddle End */
 .nyde-wrapper {
   background: blue; 
   opacity: 0.6;
   position: absolute;
-  left: 17vw;
+  left: 3vw;
   top: 99vw;
-  height: 34vw;
-  width: 61vw;
+  
 }
 .vson-wrapper {
   background: red; 
@@ -179,17 +212,13 @@ header {
   position: absolute;
   left: 22vw;
   top: 152vw;
-  height: 34vw;
-  width: 61vw;
 }
 .moodvie-wrapper {
   background: green; 
   opacity: 0.6;
   position: absolute;
-  left: 17vw;
+  left: 3vw;
   top: 205vw;
-  height: 34vw;
-  width: 61vw;
 }
 .portfolio-wrapper {
   background: yellow; 
@@ -197,7 +226,5 @@ header {
   position: absolute;
   left: 22vw;
   top: 258vw;
-  height: 34vw;
-  width: 61vw;
 } 
 /* Projects End */

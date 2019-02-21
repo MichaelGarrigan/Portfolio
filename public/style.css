@@ -163,33 +163,72 @@ header {
   position: absolute;
   width: 75vw;
 }
+.project-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  justify-content: space-between;
+  width: 70%
+}
+.project-title {
+  color: rgb(226, 225, 222);
+  font-size: 8vw;
+}
+.project-subtitle {
+  color: rgb(226, 225, 222);
+  font-size: 2.2vw;
+}
+.project-bullets {
+  color: rgb(226, 225, 222);
+  font-size: 1.6vw;
+}
+.project-tech {
+  color: rgb(226, 225, 222);
+  font-size: 2.5vw;
+  text-align: center;
+  width: 100%;
+}
+.project-tech-icons {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1vw;
+  width: 100%;
+}
+
+/* Project Icons */
+.tech-icons {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 7vw;
+  width: 7vw;
+}
+.react-icon {
+  background: url('./svg/icons/react.svg');
+}
+.redux-icon {
+  background: url('./svg/icons/redux.svg');
+}
+.node-icon {
+  background: url('./svg/icons/node.svg');
+}
+.aws-icon {
+  background: url('./svg/icons/aws.svg');
+}
+.postgresql-icon {
+  background: url('./svg/icons/postgresql.svg');
+}
+
+/* Global projects elements end*/
 
 /* 1) Peddle */
 .peddle-wrapper{
   left: 22vw;
   top: 46vw;
 }
-.peddle-content, .project-content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
-  justify-content: space-between;
-  width: 70%
-}
-.peddle-title, .project-title {
-  color: rgb(226, 225, 222);
-  font-size: 6vw;
-}
-.peddle-subtitle, .project-subtitle {
-  color: rgb(226, 225, 222);
-  font-size: 2.2vw;
-}
-.peddle-tech-stack, .project-tech-stack {
-  color: rgb(226, 225, 222);
-  font-size: 2.2vw;
-}
-.desktop-svg {
+.desktop-peddle-svg {
   background: url('./desktop_peddle.svg');
   background-repeat: no-repeat;
   background-size: contain;
@@ -235,3 +274,8 @@ header {
   top: 258vw;
 } 
 /* Projects End */
+
+#path1916 {
+  stroke: yellow;
+  stroke-width: 5px;
+}

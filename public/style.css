@@ -190,22 +190,29 @@ header {
   font-size: 2.2vw;
 }
 .desktop-svg {
-  background: url('./desktop.svg');
+  background: url('./desktop_peddle.svg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40vw;
   margin-top: 5vw;
-  width: 40vw;
+  width: 35vw;
 }
 /* 1) Peddle End */
+
 .nyde-wrapper {
-  background: blue; 
-  opacity: 0.6;
-  position: absolute;
   left: 3vw;
   top: 99vw;
-  
 }
+.smartphone-svg {
+  background: url('./smartphone_right.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 8vw;
+  width: 25vw;
+}
+
+
 .vson-wrapper {
   background: red; 
   opacity: 0.6;

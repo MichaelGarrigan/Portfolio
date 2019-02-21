@@ -220,6 +220,18 @@ header {
 .postgresql-icon {
   background: url('./svg/icons/postgresql.svg');
 }
+.mui-icon {
+  background: url('./svg/icons/material_ui.svg');
+}
+.google-map-icon {
+  background: url('./svg/icons/google_map_api.svg');
+}
+.mysql-icon {
+  background: url('./svg/icons/mysql.svg');
+}
+.d3-icon {
+  background: url('./svg/icons/d3.svg');
+}
 
 /* Global projects elements end*/
 
@@ -238,27 +250,38 @@ header {
 }
 /* 1) Peddle End */
 
+/* 2) NYDE */
 .nyde-wrapper {
   left: 3vw;
   top: 99vw;
 }
-.smartphone-svg {
-  background: url('./smartphone_right.svg');
+.smartphone-nyde-svg {
+  background: url('./svg/smartphone_right_nyde.svg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40vw;
   margin-top: 8vw;
   width: 25vw;
 }
-
-
+.nyde-title {
+  color: rgb(226, 225, 222);
+  font-size: 4vw;
+}
+/* 2) NYDE End */
+/* 3) VSON */
 .vson-wrapper {
-  background: red; 
-  opacity: 0.6;
-  position: absolute;
   left: 22vw;
   top: 152vw;
 }
+.desktop-vson-svg {
+  background: url('./svg/desktop_left_vson.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 5vw;
+  width: 35vw;
+}
+/* 3) VSON End */
 .moodvie-wrapper {
   background: green; 
   opacity: 0.6;

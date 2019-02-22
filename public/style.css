@@ -232,6 +232,16 @@ header {
 .d3-icon {
   background: url('./svg/icons/d3.svg');
 }
+.react-router-icon {
+  background: url('./svg/icons/reactrouter.svg');
+}
+.mongoDB-icon {
+  background: url('./svg/icons/mongodb.svg');
+}
+.ejs-icon {
+  background: url('./svg/icons/ejs.svg');
+}
+
 
 /* Global projects elements end*/
 
@@ -282,23 +292,24 @@ header {
   width: 35vw;
 }
 /* 3) VSON End */
+/* 4) Moodvie */
 .moodvie-wrapper {
-  background: green; 
-  opacity: 0.6;
-  position: absolute;
   left: 3vw;
   top: 205vw;
 }
-.portfolio-wrapper {
-  background: yellow; 
-  opacity: 0.6;
-  position: absolute;
+.smartphone-moodvie-svg {
+  background: url('./svg/smartphone_right_moodvie.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 8vw;
+  width: 25vw;
+}
+/* 4) Moodvie End */
+/* 5) My Portfolio */
+.my-portfolio-wrapper {
   left: 22vw;
   top: 258vw;
 } 
+/* 5) My Portfolio End */
 /* Projects End */
-
-#path1916 {
-  stroke: yellow;
-  stroke-width: 5px;
-}

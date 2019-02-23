@@ -16,6 +16,6 @@ app.get('/art', (req, res) => res.render('pages/art'));
 app.get('/blog', (req, res) => res.render('pages/blog'));
 app.get('/resume', (req, res) => res.render('pages/resume'));
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5080;
 
 app.listen(port, () => console.log(`Express Server listening on: ${port}`));

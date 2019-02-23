@@ -9,13 +9,17 @@
   "private": false,
   "scripts": {
     "start": "node main.js",
-    "dev": "nodemon main.js"
+    "dev": "nodemon main.js",
+    "test": "mocha ./test --recursive"
   },
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "chai": "^4.2.0",
+    "mocha": "^6.0.1",
+    "nodemon": "^1.18.10",
+    "request": "^2.88.0"
   }
 }

@@ -20,10 +20,11 @@ a {
   z-index: 10;
 }
 .flank-header {
-  fill: #8cb3b8;
+  fill: #858383;
 }
 .header-link {
-  fill: #4ca8b3;
+  fill: #ff8c00;
+  /* fill: #4ca8b3; */
   
 }
 #blog-header-text-link {

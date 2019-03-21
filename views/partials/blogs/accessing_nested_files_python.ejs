@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link type="text/css" rel="stylesheet" href="/prism.css"  />
+  <style>
+    main { margin: 0 auto; width: 70vw; }
+    .invalid {
+      color: red;
+    }
+    .valid {
+      color: red;
+    }
+    .code-file-name {
+      background: lightblue;
+    }
+  </style>
+</head>
+<body>
+  <a href="/blog"><div>Back</div></a>
+  <main>
+    <h1>Accessing Nested Files in our Python App</h1>
+
+    <p>When our Python project starts to get more complex we will inevetably write multiple .py files and then we will start to organize the .py files into directories and sub-directories. </p>
+
+    <p>Now Python has an <code>import</code> statement which allows us to reference a module (a .py file) from another module.</p>
+    
+    <h3>The Problem:</h3>
+    <p>Python by default cannot find a nested file.</p>
+
+    <h3>What <code>import</code> can find by default is:</h3>
+    <ol>
+      <li>Standard Library Modules</li>
+      <li>Any file that is on the same "level" as it is.</li>
+    </ol>
+
+    <h2>So lets learn how to make Python find our nested files.</h2>
+
+    <h3>Our file structure for this tutorial will look like this.</h3>
+  
+    <pre>
+    
+      /myApp
+        |
+        |> main.py
+        |
+        |> file.py
+        |
+        |> <span class="invalid">/Dir1</span>
+            |
+            |> file1.py
+            |
+            |> <span class="invalid">/Dir2</span>
+                |
+                |> file2.py
+
+        * NOTE: anything with a forward slash '/' in front of it is a directory
+    </pre>
+
+    <p>Now lets examine our main.py file</p>
+    <div class="code-file-name">main.py</div>
+    <pre class="language-python">
+    <code class="language-python">
+      import sys                  # ok -> this is part of standard library
+      from time import timezone   # ok -> this is part of standard library
+      import file                 # ok -> this is on the same 'level'
+      import file1                # fail -> ModuleNotFoundError: No module named 'fileNotFound'
+    </code>
+    </pre>
+
+    <p>We want to include this file but python cannot find it and is throwing an error like: </p>
+    
+    <pre>
+
+                        
+                      /~~~\
+                     | o o |
+                [][]  \___/  [][]
+                [][]___( )___[][]
+                       ( )
+                       / \
+                     _/   \_
+    </pre>
+    </main>
+  </body>
+<script src="/prism.js"></script>
+</html>

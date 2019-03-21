@@ -20,11 +20,12 @@ a {
   z-index: 10;
 }
 .flank-header {
-  fill: #858383;
+  /* fill: #858383; */
+  fill: #96b3b6;
 }
 .header-link {
-  fill: #ff8c00;
-  /* fill: #4ca8b3; */
+  /* fill: #ff8c00; */
+  fill: #3a9ca7;
   
 }
 #blog-header-text-link {
@@ -314,3 +315,22 @@ header {
 } 
 /* 5) My Portfolio End */
 /* Projects End */
+
+/* Blog Start */
+
+.blog-main-body {
+  background: rgb(230, 228, 228);
+  height: 100vh;
+}
+.blog-main-spacer {
+  height: 30vw;
+}
+.blog-main-body h1 {
+  color: teal;
+  font-size: 10vw;
+  text-align: center;
+}
+.blog-main-entries {
+  
+}
+/* Blog End */

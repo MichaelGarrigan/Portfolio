@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Nested Py Files</title>
   <link type="text/css" rel="stylesheet" href="/prism.css"  />
+  <link type="text/css" rel="stylesheet" href="/blogs.css"  />
   <style>
-    main { margin: 0 auto; width: 70vw; }
+    
     .invalid {
       color: red;
     }
@@ -22,15 +23,40 @@
 </head>
 <body>
   <a href="/blog"><div>Back</div></a>
-  <main>
-    <h1>Accessing Nested Files in our Python App</h1>
+  <main class="individual-blog-wrapper">
 
-    <p>When our Python project starts to get more complex we will inevetably write multiple .py files and then we will start to organize the .py files into directories and sub-directories. </p>
-
-    <p>Now Python has an <code>import</code> statement which allows us to reference a module (a .py file) from another module.</p>
+    <h1 class="individual-blog-title">
+      Accessing Nested Files in our Python App
+    </h1>
     
-    <h3>The Problem:</h3>
-    <p>Python by default cannot find a nested file.</p>
+    <h2 class="individual-blog-sub-title">
+      The Problem:
+    </h2>
+    <h2 class="individual-blog-sub-title">
+      Python by default cannot find a nested file.
+    </h2>
+
+    <p class="individual-blog-text-block">
+      When our Python project starts to get more complex we will inevetably write multiple .py files and then we will start to organize our .py files into directories and sub-directories. 
+    </p>
+
+    <p class="individual-blog-text-block">
+      Now Python has an <code>import</code> statement which allows us to reference a module (a .py file) from another module. And as a side note I really like the syntax and readability of Pythons implementation of requiring files/modules. I believe it is one of the best implementations in the industry.
+    </p>
+
+    <h3>Common ways you will see the <code>import</code> statement used:</h3>
+    <pre class="language-python">
+<code class="language-python">
+  # bring the whole dictionary
+  import os             
+
+  # only bring a specific item
+  from time import timezone  
+
+  # we can rename our import
+  from myFile import function as fn  
+</code>
+    </pre>
 
     <h3>What <code>import</code> can find by default is:</h3>
     <ol>

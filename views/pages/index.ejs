@@ -1,15 +1,20 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <%- include('../partials/head') %>
-<body>
-  <%- include('../partials/backgroundSVGHeader') %>
-  <%- include('../partials/backgroundSVGBody') %>
-  <%- include('../partials/header') %>
-  <%- include('../partials/projects/peddle.ejs') %>
-  <%- include('../partials/projects/NYDE.ejs') %>
-  <%- include('../partials/projects/VSON.ejs') %>
-  <%- include('../partials/projects/moodvie.ejs') %>
-  <%- include('../partials/projects/portfolio.ejs') %>
+<body id='index-overflow-wrapper'>
+  <main id='index-main-wrapper'>
+    <%- include('../partials/backgroundSVGHeader') %>
+    <%- include('../partials/backgroundSVGBody') %>
+    <%- include('../partials/header') %>
+  </main>
+  <main id='index-project-wrapper'>
+    <%- include('../partials/projects/peddle.ejs') %>
+    <%- include('../partials/projects/NYDE.ejs') %> 
+    <%- include('../partials/projects/VSON.ejs') %> 
+    <%- include('../partials/projects/moodvie.ejs') %>
+    <%- include('../partials/projects/portfolio.ejs') %> 
+  </main>
 </body>
 </html> 
 

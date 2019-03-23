@@ -44,7 +44,9 @@
       Now Python has an <code>import</code> statement which allows us to reference a module (a .py file) from another module. And as a side note I really like the syntax and readability of Pythons implementation of requiring files/modules. I believe it is one of the best implementations in the industry.
     </p>
 
-    <h3>Common ways you will see the <code>import</code> statement used:</h3>
+    <h3 class="individual-blog-text-header">
+      Common ways you will see the <code>import</code> statement used:
+    </h3>
     <pre class="language-python">
 <code class="language-python">
   # bring the whole dictionary
@@ -58,15 +60,26 @@
 </code>
     </pre>
 
-    <h3>What <code>import</code> can find by default is:</h3>
-    <ol>
+    <p class="individual-blog-text-block">
+      So I mentioned above in the sub-title that by default Pythons <code>import</code> statement cannot find a nested file. But before we get to how to make Python find our files lets look at what Python can recognize as a default. 
+    </p>
+    <h3 class="individual-blog-text-header">And that is:</h3>
+    <ol class="individual-blog-text-block">
       <li>Standard Library Modules</li>
       <li>Any file that is on the same "level" as it is.</li>
     </ol>
 
-    <h2>So lets learn how to make Python find our nested files.</h2>
+    <p class="individual-blog-text-block">
+      The standard library is all the prewritten code that comes with the stock Python language. These are items like math functionality, operating system functions, time and date methods, etc. Most all the common operations that you would expect a programming language to have. The second item is just saying that whatever is on the same 'level' (read here not nested) as the file being called.
+    </p>
 
-    <h3>Our file structure for this tutorial will look like this.</h3>
+    <h3 class="individual-blog-text-header">
+      So lets learn how to make Python find our nested files.
+    </h3>
+
+    <h3 class="individual-blog-text-header">
+      Our file structure for this tutorial will look like this.
+    </h3>
   
     <pre>
     

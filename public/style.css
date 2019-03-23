@@ -24,6 +24,9 @@ a {
   .header-title-flex {
     font-size: 7vw !important;
   }
+  .sub-titles {
+    font-size: 1.4vw !important;
+  }
   .peddle-wrapper{
     height: 24vw !important;
     left: 16vw !important;
@@ -132,11 +135,9 @@ main#index-project-wrapper {
   z-index: 10;
 }
 .flank-header {
-  /* fill: #858383; */
   fill: #96b3b6;
 }
 .header-link {
-  /* fill: #ff8c00; */
   fill: #3a9ca7;
   
 }
@@ -426,22 +427,3 @@ header {
 } 
 /* 5) My Portfolio End */
 /* Projects End */
-
-/* Blog Start */
-
-.blog-main-body {
-  background: rgb(230, 228, 228);
-  height: 100vh;
-}
-.blog-main-spacer {
-  height: 30vw;
-}
-.blog-main-body h1 {
-  color: teal;
-  font-size: 10vw;
-  text-align: center;
-}
-.blog-main-entries {
-  
-}
-/* Blog End */

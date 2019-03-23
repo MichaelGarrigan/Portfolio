@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
-<body>
-  <%- include('../partials/backgroundSVGHeader') %>
-  <%- include('../partials/header') %>
-  <section class="blog-main-body">
-    <div class="blog-main-spacer"></div>
-    <h1>Technical Blog</h1>
-    <div class="blog-main-entries">
-      <a href="/blog/accessing_nested_files_python">
-        <div class="blog-main-entries">
-          <p>Accessing Nested Files in Python</p>
-        </div>
-      </a>
-    </div>
-  </section>
+  <link rel="stylesheet" type="text/css" media="screen" href="/blog.css">
+<body id='blog-overflow-wrapper'>
+  <main id='blog-main-wrapper'>
+    <%- include('../partials/backgroundSVGHeader') %>
+    <%- include('../partials/header') %>
+    <section class="blog-main-body">
+      <div class="blog-main-spacer"></div>
+      <h1>Technical Blog</h1>
+      <div class="blog-main-entries">
+        <a href="/blog/accessing_nested_files_python">
+          <div class="blog-main-entries">
+            <p>Accessing Nested Files in Python</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
 </body>
 </html> 

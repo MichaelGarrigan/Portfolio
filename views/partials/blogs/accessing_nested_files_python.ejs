@@ -8,18 +8,6 @@
   <title>Nested Py Files</title>
   <link type="text/css" rel="stylesheet" href="/prism.css"  />
   <link type="text/css" rel="stylesheet" href="/blogs.css"  />
-  <style>
-    
-    .invalid {
-      color: red;
-    }
-    .valid {
-      color: red;
-    }
-    .code-file-name {
-      background: lightblue;
-    }
-  </style>
 </head>
 <body>
   <a href="/blog"><div>Back</div></a>
@@ -41,29 +29,50 @@
     </p>
 
     <p class="individual-blog-text-block">
-      Now Python has an <code>import</code> statement which allows us to reference a module (a .py file) from another module. And as a side note I really like the syntax and readability of Pythons implementation of requiring files/modules. I believe it is one of the best implementations in the industry.
+      Now Python has an <code class="just-code-tag">import</code> statement which allows us to reference a module (a .py file) from another module. The <code class="just-code-tag">import</code> statement will allow us to bring the files total contents as a block, or just a single variable, a single function or just a class. Below is a table of contents for this tutorial so if you are just skimming for an answer to 'nested files' please just jump down to the __init__.py section.
     </p>
 
     <h3 class="individual-blog-text-header">
-      Common ways you will see the <code>import</code> statement used:
+      Table of Contents:
+      <ol>
+        <li>Basic <code class="just-code-tag">import</code></li>
+        <li>A look at our file structure</li>
+        <li>Introducing <code class="just-code-tag">__init__.py</code></li>
+        <li>Empty <code class="just-code-tag">__init__.py</code> files</li>
+        <li>Code in one <code class="just-code-tag">__init__.py</code> file</li>
+        <li>Code in both <code class="just-code-tag">__init__.py</code> files</li>
     </h3>
+
+    <p class="individual-blog-text-block">
+      And as a side note I really like the syntax and readability of Pythons implementation of requiring files/modules. I believe it is one of the better implementations in the industry.
+    </p>
+
+    <h3 class="individual-blog-section">
+      1. Basic <code class="just-code-tag">import</code>
+    </h3>
+
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
+        Common ways you will see the <code class="just-code-tag">import</code> statement used:
+      </p>
     <pre class="language-python">
 <code class="language-python">
-  # bring the whole dictionary
+  # bring the whole object
   import os             
 
   # only bring a specific item
   from time import timezone  
 
-  # we can rename our import
+  # we can rename or 'alias' our import
   from myFile import function as fn  
 </code>
     </pre>
+  </div>
 
     <p class="individual-blog-text-block">
-      So I mentioned above in the sub-title that by default Pythons <code>import</code> statement cannot find a nested file. But before we get to how to make Python find our files lets look at what Python can recognize as a default. 
+      So I mentioned above in the sub-title that by default Pythons <code class="just-code-tag">import</code> statement cannot find a nested file. But before we get to how to make Python find our files lets look at what Python can recognize as a default. 
     </p>
-    <h3 class="individual-blog-text-header">And that is:</h3>
+    
     <ol class="individual-blog-text-block">
       <li>Standard Library Modules</li>
       <li>Any file that is on the same "level" as it is.</li>
@@ -73,57 +82,304 @@
       The standard library is all the prewritten code that comes with the stock Python language. These are items like math functionality, operating system functions, time and date methods, etc. Most all the common operations that you would expect a programming language to have. The second item is just saying that whatever is on the same 'level' (read here not nested) as the file being called.
     </p>
 
-    <h3 class="individual-blog-text-header">
-      So lets learn how to make Python find our nested files.
+    <h3 class="individual-blog-section">
+      2. A look at our file structure
     </h3>
 
-    <h3 class="individual-blog-text-header">
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
       Our file structure for this tutorial will look like this.
-    </h3>
+    </p>
+  <pre class="pre-without-code">
+
+    /myApp
+        |- main.py
+        |
+        |- myFile.py
+        |
+        |- /Dir1
+              |- file1.py
+              |
+              |- /Dir2
+                    |- file2.py
+
+      * NOTE: a forward slash '/' indicates a directory
+  </pre>
+  </div>
+
+  <p class="individual-blog-text-block">
+    Inside our <code class="just-code-tag">main.py</code> file.
+  </p>
+
   
-    <pre>
-    
-      /myApp
-        |
-        |> main.py
-        |
-        |> file.py
-        |
-        |> <span class="invalid">/Dir1</span>
-            |
-            |> file1.py
-            |
-            |> <span class="invalid">/Dir2</span>
-                |
-                |> file2.py
-
-        * NOTE: anything with a forward slash '/' in front of it is a directory
-    </pre>
-
-    <p>Now lets examine our main.py file</p>
-    <div class="code-file-name">main.py</div>
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      If we run <code class="just-code-tag">python main.py</code> from our /myApp directory
+    </p>
     <pre class="language-python">
-    <code class="language-python">
-      import sys                  # ok -> this is part of standard library
-      from time import timezone   # ok -> this is part of standard library
-      import file                 # ok -> this is on the same 'level'
-      import file1                # fail -> ModuleNotFoundError: No module named 'fileNotFound'
-    </code>
-    </pre>
+<code class="language-python">
+  # main.py
 
-    <p>We want to include this file but python cannot find it and is throwing an error like: </p>
+  import sys           # ok -> this is part of standard library
+  from time import timezone # ok -> this is part of standard library
+  import myFile        # ok -> this is on the same 'level'
+  import file1         # fail -> ModuleNotFoundError: No module named 'file1'
+</code>
+  </pre>
+</div>  
+    <p class="individual-blog-text-block">
+      The first three lines in main.py will execute fine but the fourth line will throw an error because Python only knows to look in the two places we spoke about above.
+    </p>
+    <p class="individual-blog-text-block">
+      So before we go into the solution lets define some terms: 
+    </p>
+    <p class="individual-blog-text-block">
+      Blocks: a piece of Python code that will be executed as a unit
+      An Example is: a module, a function body and class definitions
+      Please note here that a module can be a .py file that we define
+    </p>
+    <p class="individual-blog-text-block">
+      Module: An organizational unit of Python code. Modules have a namespace and are loaded by Python via importing.
+    </p>
+    <p class="individual-blog-text-block">
+      Package: A module with a __path__ attribute and can contain submodules or subpackages.
+    </p>
+
+    <h3 class="individual-blog-section">
+      3. Introducing <code class="just-code-tag">__init__.py</code>
+    </h3>
+
+    <p class="individual-blog-text-block">
+      Python has two types of packages, regular packages and namespace packages. So a regular package is created by putting a <code class="just-code-tag">__init__.py</code> file in a directory. And when the regular package is imported into a file the <code class="just-code-tag">__init__.py</code> is executed. But even though this <code class="just-code-tag">__init__.py</code> file is executed one thing that is sort of strange is that this file can be left empty of contents (an empty file).
+    </p>
+
+    <p class="individual-blog-text-block">
+      Also <code class="just-code-tag">__init__.py</code> file will require that the files listed in it are loaded in the order that they are listed, which is great if you would like more fine grained control. This can be very helpful if one file is retrieving data or providing setup that is used by the second file.
+    </p>
+
+    <h3 class="individual-blog-section">
+      4. Empty <code class="just-code-tag">__init__.py</code> files
+    </h3>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      So now our file structure looks like this:
+    </p>
+    <pre class="pre-without-code">
+
+      /myApp
+          |- main.py
+          |
+          |- myFile.py
+          |
+          |- /Dir1
+                |- __init__.py
+                |
+                |- file1.py
+                |
+                |- /Dir2
+                      |- __init__.py
+                      |
+                      |- file2.py
+
+    </pre>
+  </div>
+
+    <p class="individual-blog-text-block">
+      So what we have done here is add a file named <code>__init__.py</code> into each directory that has no contents, it is an empty file. Although we can (and will in a little bit) add some contents to our <code>__init__.py</code>, this empty file is perfectly valid to Python.
+    </p>
+
+    <p class="individual-blog-text-block">
+      So with an empty <code>__init__.py</code> file here is how we can use it.
+    </p>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      Inside our <code>file1.py</code> file
+    </p>
+    <pre class="language-python">
+<code class="language-python">
+  # file1.py
+
+  def firstFn():
+    print('Hello from file1.py')
+
+  def secondFn():
+    print('Hello again from file1.py')
+</code>
+  </pre>
+  </div>
+
+  <br/>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      Inside our <code>file2.py</code> file
+    </p>
+    <pre class="language-python">
+<code class="language-python">
+  # file2.py
+
+  def fnFile2():
+    print('Hello from file2.py')
+
+  def secondFnFile2():
+    print('Hello again from file2.py')
+</code>
+  </pre>
+</div>
+
+  <br/>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      From our <code>main.py</code> file
+    </p>
+    <pre class="language-python">
+<code class="language-python">
+  # main.py
+
+  import Dir1.file1
+
+  Dir1.file1.firstFn()    # prints 'Hello from file1.py'
+  Dir1.file1.secondFn()   # prints 'Hello again from file1.py'
+</code>
+  </pre>
+</div>
+
+    <p class="individual-blog-text-block">Or we can do this ...</p>
+
+<div class="code-group-wrapper">  
+  <p class="code-group-title">
+    From our <code>main.py</code> file
+  </p>
+  <pre class="language-python">
+<code class="language-python">
+  # main.py
+
+  from Dir1 import file1
+  from Dir1.Dir2 import file2
+
+  file1.firstFn()         # prints 'Hello from file1.py'
+  file1.secondFn()        # prints 'Hello again from file1.py'
+
+  file2.fnFile2()         # prints 'Hello from file2.py'
+  file2.secondFnFile2()   # prints 'Hello again from file2.py'
+</code>
+  </pre>
+</div>
+
+  <p class="individual-blog-text-block">
+    The first thing to point out is we are using a dot notation <code> . </code> to seperate our elements. Which allows us to 'chain' the directory to file to function. Although this is verbose and some people may not like the length of having to write everything out, it does provide clarity to the statement and does not try to hide anything. 
+  </p>
+
+    <h3 class="individual-blog-section">
+      5. Code in one <code class="just-code-tag">__init__.py</code> file
+    </h3>
+
+  <div class="code-group-wrapper">  
+  <p class="code-group-title">
+    Inside our Dir1 <code>__init__.py</code> file
+  </p>
+  <pre class="language-python">
+<code class="language-python">
+  # __init__.py
+
+  from .file1 import firstFn, secondFn
+  from .Dir2 import file2
+</code>
+  </pre>
+  </div>
+
+  <p class="individual-blog-text-block">
+    Note that we have the above code only in our <code>Dir1/__init__.py</code> file and our <code>Dir2/__init__.py</code> file is still empty.
+  </p>
+
+  <div class="code-group-wrapper">  
+  <p class="code-group-title">
+    From our <code>main.py</code> file
+  </p>
+    <pre class="language-python">
+<code class="language-python">
+  # main.py
+
+  from Dir1 import firstFn, secondFn, file2
+
+  firstFn()         # prints 'Hello from file1.py'
+  secondFn()        # prints 'Hello again from file1.py'
+
+  file2.fnFile2()         # prints 'Hello from file2.py'
+  file2.secondFnFile2()   # prints 'Hello again from file2.py'
+</code>
+  </pre>
+  </div>
+
+  <h3 class="individual-blog-section">
+    6. Code in both <code class="just-code-tag">__init__.py</code> files
+  </h3>
+
+  <p class="individual-blog-text-block">
+    For our last example we  alter the second line in the <code>Dir1/__init__.py</code> file and add some code to <code>Dir2/__init__.py</code> file.
+  </p>
+
+  <div class="code-group-wrapper">  
+  <p class="code-group-title">
+    Inside our Dir1 <code>__init__.py</code> file
+  </p>
+  <pre class="language-python">
+<code class="language-python">
+  # __init__.py
+
+  from .file1 import firstFn, secondFn
+  from .Dir2 import fnFile2, secondFnFile2
+</code>
+  </pre>
+  </div>
+
+  <br />
+
+  <div class="code-group-wrapper">  
+  <p class="code-group-title">
+    Inside our Dir2 <code>__init__.py</code> file
+  </p>
+  <pre class="language-python">
+<code class="language-python">
+  # __init__.py
+
+  from .file2 import fnFile2, secondFnFile2
+</code>
+  </pre>
+  </div>
+
+  <div class="code-group-wrapper">  
+  
+  <br />
+
+  <div class="code-group-wrapper">  
+  <p class="code-group-title">
+    From our <code>main.py</code> file
+  </p>
+    <pre class="language-python">
+<code class="language-python">
+  # main.py
+
+  from Dir1 import firstFn, secondFn, fnFile2, secondFnFile2
+
+  firstFn()   # prints 'Hello from file1.py'
+  secondFn()  # prints 'Hello again from file1.py'
+  fnFile2()   # prints 'Hello from file2.py'
+  secondFnFile2()  # prints 'Hello again from file2.py'
+</code>
+    </pre>
     
-    <pre>
+  <p class="individual-blog-text-block">
+    So with this last example you can see that our result is being able to call each function from its nested file without having to use 'method chaining' and it gives us a much cleaner look. Although I would argue that it introduces some magic in the sense that it hides some of the complexity. But this is the balance that you need to decide on being a software engineer.
+  </p>
 
-                        
-                      /~~~\
-                     | o o |
-                [][]  \___/  [][]
-                [][]___( )___[][]
-                       ( )
-                       / \
-                     _/   \_
-    </pre>
+  <p class="individual-blog-text-block">
+    Thank you for reading this far and HAPPY CODING!!!
+  </p>
+    
     </main>
   </body>
 <script src="/prism.js"></script>

@@ -220,7 +220,7 @@ header {
 /* Resume Start */
 .resume-main {
   height: 130vw;
-  width: 100vw;
+  width: 100%;
 }
 .resume-offset {
   height: 25.5vw;

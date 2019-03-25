@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
-<body>
-  <%- include('../partials/backgroundSVGHeader') %>
-  <%- include('../partials/header') %>
+<body id='index-overflow-wrapper'>
+  <main id='index-main-wrapper'>
+    <%- include('../partials/backgroundSVGHeader') %>
+    <%- include('../partials/header') %>
 
-  <div class="resume-main">
-    <div class="resume-offset"></div>
-    <div class="resume-wrapper">
-      <embed 
-        id="resume-pdf" 
-        width="100%" 
-        height="100%" 
-        name="plugin" src="./img/MichaelGarriganResume.pdf" type="application/pdf">
-    </div>
+    <div class="resume-main">
+      <div class="resume-offset"></div>
+      <div class="resume-wrapper">
+        <embed 
+          id="resume-pdf" 
+          width="100%" 
+          height="100%" 
+          name="plugin" src="./img/MichaelGarriganResume.pdf" type="application/pdf">
+      </div>
   </div>
-  
+  </main>
 </body>
 </html> 

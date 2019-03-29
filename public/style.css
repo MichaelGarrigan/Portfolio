@@ -10,6 +10,8 @@ a {
 /* MEDIA QUERIES */
 @media (min-aspect-ratio: 4/3) {
   main#index-main-wrapper {
+    left: 0;
+    right: 0;
     max-width: calc(70vw);
   }
   #svg-background-header {
@@ -115,17 +117,19 @@ body#index-overflow-wrapper {
 main#index-main-wrapper {
   background: #333333;
   margin: 0 auto;
+  position: absolute;
   width: 100%;
+  z-index: 5 !important;
 }
 main#index-project-wrapper {
   height: 100%;
   left: 0;
   margin: 0 auto;
-  position: absolute;
+  /* position: absolute; */
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 3;
+  /* z-index: 3 !important; */
 }
 
 /* SVG Background Header */
@@ -166,6 +170,7 @@ main#index-project-wrapper {
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 3;
 }
 /* SVG Background Body End */
 
@@ -277,6 +282,7 @@ header {
   height: 34vw;
   position: absolute;
   width: 75vw;
+  z-index: 7 !important;
 }
 
 .project-content {

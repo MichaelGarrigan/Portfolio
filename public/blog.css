@@ -59,7 +59,9 @@ main#index-project-wrapper {
   align-items: center;
   display: flex;
   flex-direction: column;
-  font-size: 4vw;
   justify-content: flex-start;
+}
+.blog-main-entry {
+  font-size: 3vw;
 }
 /* Blog End */

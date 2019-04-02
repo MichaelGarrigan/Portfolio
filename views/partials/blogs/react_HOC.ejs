@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HOC's</title>
+  <link type="text/css" rel="stylesheet" href="/prism.css"  />
+  <link type="text/css" rel="stylesheet" href="/blogs.css"  />
+</head>
+<body>
+  <a href="/blog"><div>Back</div></a>
+  <main class="individual-blog-wrapper">
+
+    <h1 class="individual-blog-title">
+      React HOC
+    </h1>
+    
+    <h2 class="individual-blog-sub-title">
+      Higher Order Component
+    </h2>
+
+    <p class="individual-blog-text-block">
+      As with many things in software engineering a Higher Order Component or (HOC) seems on the surface to be quite complicated but with careful examination is really a simple design pattern. And even though we are looking a React HOCs' it is important to note that HOCs' are just a design pattern used in building React applications and HOCs' are not defined by or native to React in any way.
+    </p>
+
+    <p class="individual-blog-text-block">
+      I would like to explain two concepts before starting our code that implements bulding a HOC. The first will be 'Higher Order Functions' and second will be 'What is a React Component?'
+    </p>
+
+    <h3 class="individual-blog-section">
+      1. Higher Order Functions or HOF
+    </h3>
+
+    <p class="individual-blog-text-block">
+      A higher order function is a very much the same as a higher order component but differs in its inputs and outputs. So a HOF takes a function in as a parameter and returns a new function. Whereas our HOC takes in and returns React Components.
+    </p>
+
+    <p class="individual-blog-text-block">PICTURE HERE >>></p>
+
+    <h3 class="individual-blog-section">
+      2. What is a React Component?
+    </h3>
+
+    <p class="individual-blog-text-block">
+      At a very basic sense a React Component is a function that takes props as a parameter and returns UI. So props as in 'this.props' and UI (user interface) as JSX. And JSX will become what we eventually see on our website as HTML elements.
+    </p>
+
+    <p class="individual-blog-text-block">PICTURE HERE >>></p>
+
+    <h3 class="individual-blog-text-header">
+      Examples of HOCs in the wild: 
+      <ol>
+        <li>Redux: connect()</li>
+        <li>
+          React Router: 
+        </li>
+      </ol>
+    </h3>
+
+    <h3 class="individual-blog-text-header">
+      Attributes of a HOC:
+      <ol>
+        <li>A pure function that has no side effects</li>
+        <li>Accepts a react component as a parameter and returns a new react component</li>
+      </ol>
+    </h3>
+
+    
+
+    <h3 class="individual-blog-section">
+      1. Basic <code class="just-code-tag">import</code>
+    </h3>
+
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
+        Common ways you will see the <code class="just-code-tag">import</code> statement used:
+      </p>
+    <pre class="language-python">
+<code class="language-python">
+  # bring the whole object
+  import os             
+
+  # only bring a specific item
+  from time import timezone  
+
+  # we can rename or 'alias' our import
+  from myFile import function as fn  
+</code>
+    </pre>
+  </div>
+
+    <p class="individual-blog-text-block">
+      So I mentioned above in the sub-title that by default Pythons <code class="just-code-tag">import</code> statement cannot find a nested file. But before we get to how to make Python find our files lets look at what Python can recognize as a default. 
+    </p>
+    
+    <ol class="individual-blog-text-block">
+      <li>Standard Library Modules</li>
+      <li>Any file that is on the same "level" as it is.</li>
+    </ol>
+
+    <p class="individual-blog-text-block">
+      The standard library is all the prewritten code that comes with the stock Python language. These are items like math functionality, operating system functions, time and date methods, etc. Most all the common operations that you would expect a programming language to have. The second item is just saying that whatever is on the same 'level' (read here not nested) as the file being called.
+    </p>
+
+    <h3 class="individual-blog-section">
+      2. A look at our file structure
+    </h3>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      Our file structure for this tutorial will look like this.
+    </p>
+  <pre class="pre-without-code">
+
+    /myApp
+        |- main.py
+        |
+        |- myFile.py
+        |
+        |- /Dir1
+              |- file1.py
+              |
+              |- /Dir2
+                    |- file2.py
+
+      * NOTE: a forward slash '/' indicates a directory
+  </pre>
+  </div>
+
+  <p class="individual-blog-text-block">
+    Inside our <code class="just-code-tag">main.py</code> file.
+  </p>
+
+  
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      If we run <code class="just-code-tag">python main.py</code> from our /myApp directory
+    </p>
+    <pre class="language-python">
+<code class="language-python">
+  # main.py
+
+  import sys           # ok -> this is part of standard library
+  from time import timezone # ok -> this is part of standard library
+  import myFile        # ok -> this is on the same 'level'
+  import file1         # fail -> ModuleNotFoundError: No module named 'file1'
+</code>
+  </pre>
+</div>  
+    <p class="individual-blog-text-block">
+      The first three lines in main.py will execute fine but the fourth line will throw an error because Python only knows to look in the two places we spoke about above.
+    </p>
+    <p class="individual-blog-text-block">
+      So before we go into the solution lets define some terms: 
+    </p>
+    <p class="individual-blog-text-block">
+      Blocks: a piece of Python code that will be executed as a unit
+      An Example is: a module, a function body and class definitions
+      Please note here that a module can be a .py file that we define
+    </p>
+    <p class="individual-blog-text-block">
+      Module: An organizational unit of Python code. Modules have a namespace and are loaded by Python via importing.
+    </p>
+    <p class="individual-blog-text-block">
+      Package: A module with a __path__ attribute and can contain submodules or subpackages.
+    </p>
+
+    <h3 class="individual-blog-section">
+      3. Introducing <code class="just-code-tag">__init__.py</code>
+    </h3>
+
+    <p class="individual-blog-text-block">
+      Python has two types of packages, regular packages and namespace packages. So a regular package is created by putting a <code class="just-code-tag">__init__.py</code> file in a directory. And when the regular package is imported into a file the <code class="just-code-tag">__init__.py</code> is executed. But even though this <code class="just-code-tag">__init__.py</code> file is executed one thing that is sort of strange is that this file can be left empty of contents (an empty file).
+    </p>
+
+    <p class="individual-blog-text-block">
+      Also <code class="just-code-tag">__init__.py</code> file will require that the files listed in it are loaded in the order that they are listed, which is great if you would like more fine grained control. This can be very helpful if one file is retrieving data or providing setup that is used by the second file.
+    </p>
+
+    <h3 class="individual-blog-section">
+      4. Empty <code class="just-code-tag">__init__.py</code> files
+    </h3>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      So now our file structure looks like this:
+    </p>
+    <pre class="pre-without-code">
+
+      /myApp
+          |- main.py
+          |
+          |- myFile.py
+          |
+          |- /Dir1
+                |- __init__.py
+                |
+                |- file1.py
+                |
+                |- /Dir2
+                      |- __init__.py
+                      |
+                      |- file2.py
+
+    </pre>
+  </div>
+
+    <p class="individual-blog-text-block">
+      So what we have done here is add a file named <code>__init__.py</code> into each directory that has no contents, it is an empty file. Although we can (and will in a little bit) add some contents to our <code>__init__.py</code>, this empty file is perfectly valid to Python.
+    </p>
+
+    <p class="individual-blog-text-block">
+      So with an empty <code>__init__.py</code> file here is how we can use it.
+    </p>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      Inside our <code>file1.py</code> file
+    </p>
+    <pre class="language-python">
+<code class="language-python">
+  # file1.py
+
+  def firstFn():
+    print('Hello from file1.py')
+
+  def secondFn():
+    print('Hello again from file1.py')
+</code>
+  </pre>
+  </div>
+
+  <br/>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      Inside our <code>file2.py</code> file
+    </p>
+    <pre class="language-python">
+<code class="language-python">
+  # file2.py
+
+  def fnFile2():
+    print('Hello from file2.py')
+
+  def secondFnFile2():
+    print('Hello again from file2.py')
+</code>
+  </pre>
+</div>
+
+  <br/>
+
+  <div class="code-group-wrapper">  
+    <p class="code-group-title">
+      From our <code>main.py</code> file
+    </p>
+    <pre class="language-python">
+<code class="language-python">
+  # main.py
+
+  import Dir1.file1
+
+  Dir1.file1.firstFn()    # prints 'Hello from file1.py'
+  Dir1.file1.secondFn()   # prints 'Hello again from file1.py'
+</code>
+  </pre>
+</div>
+
+    </main>
+  </body>
+<script src="/prism.js"></script>
+</html>

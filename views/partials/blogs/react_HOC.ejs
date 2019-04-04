@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>HOC's</title>
-  <link type="text/css" rel="stylesheet" href="/prism.css"  />
+  <link type="text/css" rel="stylesheet" href="/prismJS.css"  />
   <link type="text/css" rel="stylesheet" href="/blogs.css"  />
 </head>
 <body>
@@ -34,8 +34,62 @@
     </h3>
 
     <p class="individual-blog-text-block">
-      A higher order function is a very much the same as a higher order component but differs in its inputs and outputs. So a HOF takes a function in as a parameter and returns a new function. Whereas our HOC takes in and returns React Components.
+      A HOF is a function that operates on other functions. Below is a quick look at the three ways a HOF can be used. Also not all programming languages allow you to pass a function as a parameter or return a function from a function. But Javascript does and we can use HOFs to create powerful programming techniques and patterns.
     </p>
+
+    <h3 class="individual-blog-text-header">
+      Three signatures of HOF's: 
+      <ol>
+        <li>A function that accepts functions as arguments</li>
+        <pre class="language-javascript">
+<code class="language-javascript">
+  function myHOF (function1) {
+    const result = function1();
+    return result;
+  } 
+  // usage
+  myHOF( (value) => {return value++;} );
+</code>
+    </pre>
+        <li>A function that returns a function</li>
+        <pre class="language-javascript">
+<code class="language-javascript">
+  function myHOF (value) {
+    return function () {
+      return value++;
+    }
+  } 
+  // usage
+  myHOF(5)();
+</code>
+    </pre>
+        <li>A function that does both</li>
+        <pre class="language-javascript">
+<code class="language-javascript">
+  function myHOF (function1, function2, data) {
+    return function () {
+      return function1(data[0]) + function2(data[1]);
+    }
+  } 
+  // usage
+  myHOF(
+    value => value * value,
+    value => value / value,
+    [10, 40]
+  )();
+</code>
+    </pre>
+      </ol>
+    </h3>
+
+
+
+    <p class="individual-blog-text-block">
+      A higher order function is a very much the same as a higher order component but differs in its inputs and outputs. So a HOF can take a function in as a parameter and returns a new function. Whereas our HOC takes in and returns React Components.
+    </p>
+
+
+    
 
     <p class="individual-blog-text-block">PICTURE HERE >>></p>
 
@@ -67,209 +121,70 @@
       </ol>
     </h3>
 
-    
-
     <h3 class="individual-blog-section">
-      1. Basic <code class="just-code-tag">import</code>
+      What problem does a HOC solve?
     </h3>
 
-    <div class="code-group-wrapper">  
-      <p class="code-group-title">
-        Common ways you will see the <code class="just-code-tag">import</code> statement used:
-      </p>
-    <pre class="language-python">
-<code class="language-python">
-  # bring the whole object
-  import os             
-
-  # only bring a specific item
-  from time import timezone  
-
-  # we can rename or 'alias' our import
-  from myFile import function as fn  
-</code>
-    </pre>
-  </div>
-
     <p class="individual-blog-text-block">
-      So I mentioned above in the sub-title that by default Pythons <code class="just-code-tag">import</code> statement cannot find a nested file. But before we get to how to make Python find our files lets look at what Python can recognize as a default. 
-    </p>
-    
-    <ol class="individual-blog-text-block">
-      <li>Standard Library Modules</li>
-      <li>Any file that is on the same "level" as it is.</li>
-    </ol>
-
-    <p class="individual-blog-text-block">
-      The standard library is all the prewritten code that comes with the stock Python language. These are items like math functionality, operating system functions, time and date methods, etc. Most all the common operations that you would expect a programming language to have. The second item is just saying that whatever is on the same 'level' (read here not nested) as the file being called.
+      HOC's main strength is keeping our code DRY. Where DRY is an acronym for Don't Repeat Yourself. A HOC will define behavior that we would like in our component, so we can use our HOC in multiple locations within our code and use the same HOC to wrap our component.
     </p>
 
     <h3 class="individual-blog-section">
-      2. A look at our file structure
+      What problem does a HOC create?
     </h3>
 
-  <div class="code-group-wrapper">  
-    <p class="code-group-title">
-      Our file structure for this tutorial will look like this.
+    <p class="individual-blog-text-block">
+      HOC's main weakness that it can override prop names on our components if we are careless. And if we add methods to the original component that are setting state then we can make code that is dificult to understand. And lastly you can chain HOCs and create a very complex statement. Like HOC1(HOC2(HOC3(HOC4(BaseComponent))))
     </p>
-  <pre class="pre-without-code">
 
-    /myApp
-        |- main.py
-        |
-        |- myFile.py
-        |
-        |- /Dir1
-              |- file1.py
-              |
-              |- /Dir2
-                    |- file2.py
+    <h3 class="individual-blog-section">
+      So lets make a HOC !!!
+    </h3>
 
-      * NOTE: a forward slash '/' indicates a directory
-  </pre>
-  </div>
+    <p class="individual-blog-text-block">
+      First we will define the function.
+    </p>
 
-  <p class="individual-blog-text-block">
-    Inside our <code class="just-code-tag">main.py</code> file.
-  </p>
+    <pre class="language-javascript">
+<code class="language-javascript">
+  function myHOC (BasicComponent) {
+    
+  } 
 
+  function myHOC (BasicComponent) {
+    return class HOC extends React.Component {
+      render() {
+        return <BasicComponent />
+      }
+    }
+  } 
+
+  function myHOC (BasicComponent) {
+    return class HOC extends React.Component {
+      constructor(props) {
+        super(props);
+        this.injectedProp = "A special string.";
+      }
+      injectedMethod = (value) => {
+        return value++;
+      }
+      render() {
+        return (
+          <BasicComponent 
+            injectedProp={this.injectedProp}
+            injectedMethod={this.injectedMethod}
+            {...this.props}
+          />
+        )
+      }
+    }
+  } 
   
-  <div class="code-group-wrapper">  
-    <p class="code-group-title">
-      If we run <code class="just-code-tag">python main.py</code> from our /myApp directory
-    </p>
-    <pre class="language-python">
-<code class="language-python">
-  # main.py
-
-  import sys           # ok -> this is part of standard library
-  from time import timezone # ok -> this is part of standard library
-  import myFile        # ok -> this is on the same 'level'
-  import file1         # fail -> ModuleNotFoundError: No module named 'file1'
 </code>
-  </pre>
-</div>  
-    <p class="individual-blog-text-block">
-      The first three lines in main.py will execute fine but the fourth line will throw an error because Python only knows to look in the two places we spoke about above.
-    </p>
-    <p class="individual-blog-text-block">
-      So before we go into the solution lets define some terms: 
-    </p>
-    <p class="individual-blog-text-block">
-      Blocks: a piece of Python code that will be executed as a unit
-      An Example is: a module, a function body and class definitions
-      Please note here that a module can be a .py file that we define
-    </p>
-    <p class="individual-blog-text-block">
-      Module: An organizational unit of Python code. Modules have a namespace and are loaded by Python via importing.
-    </p>
-    <p class="individual-blog-text-block">
-      Package: A module with a __path__ attribute and can contain submodules or subpackages.
-    </p>
-
-    <h3 class="individual-blog-section">
-      3. Introducing <code class="just-code-tag">__init__.py</code>
-    </h3>
-
-    <p class="individual-blog-text-block">
-      Python has two types of packages, regular packages and namespace packages. So a regular package is created by putting a <code class="just-code-tag">__init__.py</code> file in a directory. And when the regular package is imported into a file the <code class="just-code-tag">__init__.py</code> is executed. But even though this <code class="just-code-tag">__init__.py</code> file is executed one thing that is sort of strange is that this file can be left empty of contents (an empty file).
-    </p>
-
-    <p class="individual-blog-text-block">
-      Also <code class="just-code-tag">__init__.py</code> file will require that the files listed in it are loaded in the order that they are listed, which is great if you would like more fine grained control. This can be very helpful if one file is retrieving data or providing setup that is used by the second file.
-    </p>
-
-    <h3 class="individual-blog-section">
-      4. Empty <code class="just-code-tag">__init__.py</code> files
-    </h3>
-
-  <div class="code-group-wrapper">  
-    <p class="code-group-title">
-      So now our file structure looks like this:
-    </p>
-    <pre class="pre-without-code">
-
-      /myApp
-          |- main.py
-          |
-          |- myFile.py
-          |
-          |- /Dir1
-                |- __init__.py
-                |
-                |- file1.py
-                |
-                |- /Dir2
-                      |- __init__.py
-                      |
-                      |- file2.py
-
     </pre>
-  </div>
 
-    <p class="individual-blog-text-block">
-      So what we have done here is add a file named <code>__init__.py</code> into each directory that has no contents, it is an empty file. Although we can (and will in a little bit) add some contents to our <code>__init__.py</code>, this empty file is perfectly valid to Python.
-    </p>
-
-    <p class="individual-blog-text-block">
-      So with an empty <code>__init__.py</code> file here is how we can use it.
-    </p>
-
-  <div class="code-group-wrapper">  
-    <p class="code-group-title">
-      Inside our <code>file1.py</code> file
-    </p>
-    <pre class="language-python">
-<code class="language-python">
-  # file1.py
-
-  def firstFn():
-    print('Hello from file1.py')
-
-  def secondFn():
-    print('Hello again from file1.py')
-</code>
-  </pre>
-  </div>
-
-  <br/>
-
-  <div class="code-group-wrapper">  
-    <p class="code-group-title">
-      Inside our <code>file2.py</code> file
-    </p>
-    <pre class="language-python">
-<code class="language-python">
-  # file2.py
-
-  def fnFile2():
-    print('Hello from file2.py')
-
-  def secondFnFile2():
-    print('Hello again from file2.py')
-</code>
-  </pre>
-</div>
-
-  <br/>
-
-  <div class="code-group-wrapper">  
-    <p class="code-group-title">
-      From our <code>main.py</code> file
-    </p>
-    <pre class="language-python">
-<code class="language-python">
-  # main.py
-
-  import Dir1.file1
-
-  Dir1.file1.firstFn()    # prints 'Hello from file1.py'
-  Dir1.file1.secondFn()   # prints 'Hello again from file1.py'
-</code>
-  </pre>
-</div>
 
     </main>
   </body>
-<script src="/prism.js"></script>
+<script src="/prismJS.js"></script>
 </html>

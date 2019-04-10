@@ -10,9 +10,9 @@
   <link type="text/css" rel="stylesheet" href="/blogs.css"  />
 </head>
 <body>
-  <a href="/blog"><div>Back</div></a>
-  <main class="individual-blog-wrapper">
 
+  <main class="individual-blog-wrapper">
+    <%- include('../individualBlogHeader') %>
     <h1 class="individual-blog-title">
       React HOC
     </h1>
@@ -39,9 +39,12 @@
 
     <h3 class="individual-blog-text-header">
       Three signatures of HOF's: 
-      <ol>
-        <li>A function that accepts functions as arguments</li>
-        <pre class="language-javascript">
+    </h3>
+      <p class="individual-blog-text-block">
+        1) A function that accepts functions as arguments
+      </p>
+
+<pre class="language-javascript">
 <code class="language-javascript">
   function myHOF (function1) {
     const result = function1();
@@ -50,9 +53,13 @@
   // usage
   myHOF( (value) => {return value++;} );
 </code>
-    </pre>
-        <li>A function that returns a function</li>
-        <pre class="language-javascript">
+</pre>
+
+      <p class="individual-blog-text-block">
+        2) A function that returns a function
+      </p>
+        
+<pre class="language-javascript">
 <code class="language-javascript">
   function myHOF (value) {
     return function () {
@@ -62,9 +69,13 @@
   // usage
   myHOF(5)();
 </code>
-    </pre>
-        <li>A function that does both</li>
-        <pre class="language-javascript">
+</pre>
+
+      <p class="individual-blog-text-block">
+        3) A function that does both
+      </p>
+        
+<pre class="language-javascript">
 <code class="language-javascript">
   function myHOF (function1, function2, data) {
     return function () {
@@ -78,11 +89,7 @@
     [10, 40]
   )();
 </code>
-    </pre>
-      </ol>
-    </h3>
-
-
+</pre>
 
     <p class="individual-blog-text-block">
       A higher order function is a very much the same as a higher order component but differs in its inputs and outputs. So a HOF can take a function in as a parameter and returns a new function. Whereas our HOC takes in and returns React Components.

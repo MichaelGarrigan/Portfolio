@@ -3,6 +3,29 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
+
+/* Individual Blog Header Start */
+
+.individual-blog-header {
+  background: rgb(99,247,243);
+  background: linear-gradient(90deg, rgba(99,247,243,1) 0%, rgba(99,204,247,1) 50%, rgba(52,83,250,1) 100%);
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  height: 8vw;
+}
+.individual-blog-main-title {
+  color: #ff8c00;
+  font-size: 6vw;
+  grid-column: span 2 / auto;
+  text-shadow: 2px 2px 1px rgb(80, 78, 78);
+}
+.individual-blog-backlink {
+
+}
+
+/* Individual Blog Header End */
+
 .individual-blog-wrapper {
   margin: 0 auto; 
   width: 70vw;
@@ -27,6 +50,7 @@
 }
 .individual-blog-text-block {
   font-size: 2.4vw;
+  line-height: 1.4;
 }
 .individual-blog-text-header {
   font-size: 3vw;

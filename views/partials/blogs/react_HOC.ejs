@@ -7,18 +7,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>HOC's</title>
   <link type="text/css" rel="stylesheet" href="/prismJS.css"  />
+  <link type="text/css" rel="stylesheet" href="/prism-react.css"  />
   <link type="text/css" rel="stylesheet" href="/blogs.css"  />
 </head>
 <body>
 
   <main class="individual-blog-wrapper">
     <%- include('../individualBlogHeader') %>
-    <h1 class="individual-blog-title">
-      React HOC
-    </h1>
     
+    <div class="ind-blog-title-card HOC-title-card"></div>
+
     <h2 class="individual-blog-sub-title">
-      Higher Order Component
+      React HOC's
     </h2>
 
     <p class="individual-blog-text-block">
@@ -34,49 +34,71 @@
     </h3>
 
     <p class="individual-blog-text-block">
-      A HOF is a function that operates on other functions. Below is a quick look at the three ways a HOF can be used. Also not all programming languages allow you to pass a function as a parameter or return a function from a function. But Javascript does and we can use HOFs to create powerful programming techniques and patterns.
+      A HOF is a function that operates on other functions. HOF's are a programming paradigm that stems from functional programming. Not all programming languages make it easy (or allow it at all) to pass a function as a parameter or return a function from a function. But Javascript does and we can use HOFs to create powerful programming techniques and patterns.
+    </p>      
+
+    <p class="individual-blog-text-block">
+      Javascript treats functions as 'first class citizens' which means Javascript functions have these attributes: 
+    </p>
+
+    <p class="individual-blog-text-block">
+      1) Functions can be stored in a variable and nested in a data structure.
+    </p>
+    <p class="individual-blog-text-block">
+      2) Functions can be passed to and returned from functions.
+    </p>
+    <p class="individual-blog-text-block">
+      3) Functions can have properties and methods.
+    </p>
+
+    <p class="individual-blog-text-block">
+      Below is a quick look at the three ways a HOF can be used. 
     </p>
 
     <h3 class="individual-blog-text-header">
       Three signatures of HOF's: 
     </h3>
-      <p class="individual-blog-text-block">
+
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
         1) A function that accepts functions as arguments
       </p>
-
-<pre class="language-javascript">
-<code class="language-javascript">
-  function myHOF (function1) {
-    const result = function1();
+      <pre class="language-javascript">
+        <code class="language-javascript">
+  function myHOF (function1, value) {
+    const result = function1(value) + function1(value);
     return result;
   } 
   // usage
-  myHOF( (value) => {return value++;} );
-</code>
-</pre>
+  const double = (value) => {return value + value;} 
+  myHOF( double );
+        </code>
+      </pre>
+    </div>
 
-      <p class="individual-blog-text-block">
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
         2) A function that returns a function
       </p>
-        
-<pre class="language-javascript">
-<code class="language-javascript">
+      <pre class="language-javascript">
+        <code class="language-javascript">
   function myHOF (value) {
     return function () {
-      return value++;
+      return value+=1;
     }
   } 
   // usage
-  myHOF(5)();
-</code>
-</pre>
+  myHOF(5)( ); // note the empty paren at the end invokes the returned function
+        </code>
+      </pre>
+    </div>
 
-      <p class="individual-blog-text-block">
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
         3) A function that does both
       </p>
-        
-<pre class="language-javascript">
-<code class="language-javascript">
+      <pre class="language-javascript">
+        <code class="language-javascript">
   function myHOF (function1, function2, data) {
     return function () {
       return function1(data[0]) + function2(data[1]);
@@ -87,16 +109,14 @@
     value => value * value,
     value => value / value,
     [10, 40]
-  )();
-</code>
-</pre>
+  )( ); // returns 101
+        </code>
+      </pre>
+    </div>
 
     <p class="individual-blog-text-block">
       A higher order function is a very much the same as a higher order component but differs in its inputs and outputs. So a HOF can take a function in as a parameter and returns a new function. Whereas our HOC takes in and returns React Components.
     </p>
-
-
-    
 
     <p class="individual-blog-text-block">PICTURE HERE >>></p>
 
@@ -109,16 +129,6 @@
     </p>
 
     <p class="individual-blog-text-block">PICTURE HERE >>></p>
-
-    <h3 class="individual-blog-text-header">
-      Examples of HOCs in the wild: 
-      <ol>
-        <li>Redux: connect()</li>
-        <li>
-          React Router: 
-        </li>
-      </ol>
-    </h3>
 
     <h3 class="individual-blog-text-header">
       Attributes of a HOC:
@@ -148,23 +158,96 @@
       So lets make a HOC !!!
     </h3>
 
-    <p class="individual-blog-text-block">
-      First we will define the function.
-    </p>
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
+        First we will define BaseComponent.
+      </p>
+      <pre class="language-javascript">
+        <code class="language-javascript">
+  // in ./basicComponent.js
 
-    <pre class="language-javascript">
-<code class="language-javascript">
+  import React { Fragment }from 'react';
+
+  class BasicComponent extends React.Component {
+    state = {
+      ids: []
+    }
+
+    handleIds = id => {
+      this.setState(prevState => {
+        ids: prevState.ids.push(id);
+      })
+    }
+
+    render() {
+      return (
+        &lt >
+          &ltdiv 
+            ids={ this.state.ids }
+            handleIds={ this.handleIds }
+          />
+
+          &ltOtherComponent />
+        &lt / >
+      )
+    }
+  } 
+        </code>
+      </pre>
+    </div>
+    
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
+        Next we define our HOC and pass it the BaseComponent.
+      </p>
+      <pre class="language-javascript">
+        <code class="language-javascript">
+  import React from 'react';
+  import BasicComponent from './basicComponent.js';
+
   function myHOC (BasicComponent) {
     
   } 
+        </code>
+      </pre>
+    </div>
+
+    <p class="individual-blog-text-block">
+      So here we have defined a regular function that is accepting an argument that is a react component.
+    </p>
+
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
+        Now we return a new component that returns our BasicComponent.
+      </p>
+      <pre class="language-javascript">
+        <code class="language-javascript">
+  import React from 'react';
+  import BasicComponent from './basicComponent.js';
 
   function myHOC (BasicComponent) {
     return class HOC extends React.Component {
       render() {
-        return <BasicComponent />
+        return &ltBasicComponent />
       }
     }
   } 
+        </code>
+      </pre>
+    </div>
+
+    <p class="individual-blog-text-block">
+      So now our regular function is returning a new class based react component that in turn is returning our argument. This wrapper is important because if we just return our original component with adding properties/methods and not having to mutate the original component.
+    </p>
+
+    <div class="code-group-wrapper">  
+      <p class="code-group-title">
+        Now we add properties and methods to our BasicComponent.
+      </p>
+      <pre class="language-javascript">
+        <code class="language-javascript">
+  import React from 'react';
+  import BasicComponent from './basicComponent.js';
 
   function myHOC (BasicComponent) {
     return class HOC extends React.Component {
@@ -172,24 +255,26 @@
         super(props);
         this.injectedProp = "A special string.";
       }
-      injectedMethod = (value) => {
-        return value++;
+      injectedMethod = value => value += 1;
       }
       render() {
         return (
-          <BasicComponent 
-            injectedProp={this.injectedProp}
-            injectedMethod={this.injectedMethod}
-            {...this.props}
-          />
+          &ltBasicComponent 
+            injectedProp={ this.injectedProp }
+            injectedMethod={ this.injectedMethod }
+            { ...this.props } // note we are passing props through
+          /&gt
         )
       }
     }
   } 
-  
-</code>
-    </pre>
+        </code>
+      </pre>
+    </div>
 
+    <p class="individual-blog-text-block">
+      The component named HOC that we are returning contains the logic to react to any conditions, state change or user invoked events and provide the &ltBasicComponent />  with the appropriate props. And lastly it is very important to pass throught the props via the spread operator { ...props }. If this is not provided to our component then it will not recieve any of the props that are being passed down. The last item to point out is to be aware of the naming of the props that you add to the &ltBasicComponent /> because it can be tricky to track down a bug when two props names are the same.
+    </p>
 
     </main>
   </body>

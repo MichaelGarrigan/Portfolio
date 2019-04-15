@@ -1,4 +1,7 @@
 /* Blog Start */
+a {
+  text-decoration: none;
+}
 
 #blog-overflow-wrapper {
   position: absolute;
@@ -44,7 +47,7 @@ main#index-project-wrapper {
   }
 }
 .blog-main-body {
-  background: rgb(230, 228, 228);
+  background: #dbdada;
   height: 100vh;
 }
 .blog-main-spacer {
@@ -54,6 +57,7 @@ main#index-project-wrapper {
   color: teal;
   font-size: 10vw;
   text-align: center;
+  text-shadow: 3px 3px 8px #888888;
 }
 .blog-main-entries {
   align-items: center;
@@ -62,6 +66,13 @@ main#index-project-wrapper {
   justify-content: flex-start;
 }
 .blog-main-entry {
+  background: rgb(250, 242, 250);
+  border-radius: 20px;
+  box-shadow: 5px 10px 18px #888888;
+  color: rgb(158, 12, 158);
   font-size: 3vw;
+  margin: 1rem 0;
+  padding: 1rem;
+  text-shadow: 2px 2px 5px #888888;
 }
 /* Blog End */

@@ -10,8 +10,9 @@
   <link type="text/css" rel="stylesheet" href="/blogs.css"  />
 </head>
 <body>
-  <a href="/blog"><div>Back</div></a>
   <main class="individual-blog-wrapper">
+
+    <%- include('../individualBlogHeader') %>
 
     <h1 class="individual-blog-title">
       Accessing Nested Files in our Python App
@@ -352,10 +353,6 @@
   </div>
 
   <div class="code-group-wrapper">  
-  
-  <br />
-
-  <div class="code-group-wrapper">  
   <p class="code-group-title">
     From our <code>main.py</code> file
   </p>
@@ -371,6 +368,7 @@
   secondFnFile2()  # prints 'Hello again from file2.py'
 </code>
     </pre>
+  </div>
     
   <p class="individual-blog-text-block">
     So with this last example you can see that our result is being able to call each function from its nested file without having to use 'method chaining' and it gives us a much cleaner look. Although I would argue that it introduces some magic in the sense that it hides some of the complexity. But this is the balance that you need to decide on being a software engineer.

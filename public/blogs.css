@@ -1,61 +1,51 @@
 
 * {
+  color: #333333;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+}
+a {
+  text-decoration: none;
 }
 
 /* Individual Blog Header Start */
 
 .individual-blog-header {
-  background: rgb(99,247,243);
-  background: linear-gradient(90deg, rgba(99,247,243,1) 0%, rgba(99,204,247,1) 50%, rgba(52,83,250,1) 100%);
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  height: 8vw;
+  align-items: center;
+  background: #333333;
+  border-bottom: 6px solid #ff8c00;
+  display: flex;
+  justify-content: space-around;
+  height: 10vw;
+  text-shadow: 2px 2px 4px #888888;
 }
 .individual-blog-main-title {
   color: #ff8c00;
   font-size: 6vw;
-  grid-column: span 2 / auto;
-  text-shadow: 2px 2px 1px rgb(80, 78, 78);
 }
 .individual-blog-backlink {
-
+  color: #ff8c00;
+  font-size: 3vw;
 }
 /* Individual Blog Header End */
 
-/* Individual Blog Title SVG */
-.ind-blog-title-card {
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  border-radius: 20px;
-  height: 40vw;
-  margin: 20px auto;
-  text-shadow: 2px 2px 1px rgb(39, 38, 38);
-  width: 80%;
-}
-.HOC-title-card {
-  background: url('./svg/HOC.svg');
-}
-#blog-HOC-svg {
-}
-
-/* Individual Blog Title SVG End */
 
 .individual-blog-wrapper {
+  background: rgb(230, 228, 228);
   margin: 0 auto; 
   width: 80vw;
 }
 .individual-blog-title {
-  color: rgb(22, 22, 22);
+  color: #333333;
   font-size: 6vw;
+  padding: 0 2rem;
   text-align: center;
 }
 .individual-blog-sub-title {
   color: rgb(189, 112, 93);
   font-size: 3vw;
   margin: 1vw 0;
+  padding: 0 2rem;
   text-align: center;
 }
 .just-code-tag {
@@ -68,9 +58,11 @@
 .individual-blog-text-block {
   font-size: 2.4vw;
   line-height: 1.4;
+  padding: 0 2rem; 
 }
 .individual-blog-text-header {
   font-size: 3vw;
+  padding: 0 2rem;
 }
 
 
@@ -80,7 +72,7 @@
   box-shadow: 5px 10px 18px #888888;
   display: flex;
   flex-direction: column;
-  margin: 2rem 0;
+  margin: 2rem;
 }
 .code-group-title {
   background: lightblue;
@@ -95,7 +87,9 @@
 }
 .pre-without-code {
   background: rgb(221, 224, 226);
-  font-size: 3vw;
+  border-radius: 1rem;
+  font-size: 1.5vw;
   margin: 0;
+  padding: 0 2rem;
 }
 /* Code Group End */

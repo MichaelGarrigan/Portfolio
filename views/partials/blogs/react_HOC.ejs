@@ -18,7 +18,7 @@
     </h1>
 
     <p class="individual-blog-text-block">
-      As with many things in software engineering a Higher Order Component or (HOC) seems on the surface to be quite complicated but with careful examination is really a simple design pattern. And even though we are looking a React HOCs' it is important to note that HOCs' are just a design pattern used in building React applications and HOCs' are not defined by or native to React in any way.
+      As with many things in software engineering a Higher Order Component or (HOC) seems on the surface to be quite complicated but with careful examination is really a simple design pattern. And even though we are looking at a HOC in the context of React it is important to note that HOCs' are just a design pattern used in building React applications and HOCs' are not defined by or native to React in any way.
     </p>
 
     <p class="individual-blog-text-block">
@@ -114,7 +114,12 @@
       A higher order function is a very much the same as a higher order component but differs in its inputs and outputs. So a HOF can take a function in as a parameter and returns a new function. Whereas our HOC takes in and returns React Components.
     </p>
 
-    <p class="individual-blog-text-block">PICTURE HERE >>></p>
+    <div class="individual-blog-svg-image-and-caption">
+      <div class="individual-blog-svg-HOC-Factory"></div>
+      <div class="individual-blog-svg-HOC-Factory-caption">
+        Note: We have returned a new React component with the original component inside (modified to include extra data). But we will not be able to gain access to the original component until we are using/calling our new component. At that point the new component will return our original component to the front end ui. 
+      </div>
+    </div>
 
     <h3 class="individual-blog-section">
       2. What is a React Component?

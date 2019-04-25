@@ -1,6 +1,6 @@
 
 * {
-  color: #333333;
+  
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
@@ -29,7 +29,7 @@ a {
 }
 /* Individual Blog Header End */
 
-
+/* Individual Blog Body */
 .individual-blog-wrapper {
   background: rgb(230, 228, 228);
   margin: 0 auto; 
@@ -56,13 +56,38 @@ a {
   text-align: center;
 }
 .individual-blog-text-block {
+  color: #333333;
   font-size: 2.4vw;
   line-height: 1.4;
   padding: 0 2rem; 
 }
 .individual-blog-text-header {
+  color: #333333;
   font-size: 3vw;
   padding: 0 2rem;
+}
+
+.individual-blog-svg-image-and-caption {
+  background: #333333;
+  border-radius: 1rem;
+  box-shadow: 5px 10px 18px #888888;
+  margin: 1rem;
+  padding: 2rem;
+  width: 90%;
+}
+.individual-blog-svg-HOC-Factory-caption {
+  border-radius: 0 0 1rem 1rem;
+  color: ivory;
+  font-size: 2.4vw;
+  font-weight: 100;
+  line-height: 1.4;
+}
+
+.individual-blog-svg-HOC-Factory {
+  background: url("/svg/HOC_factory.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 35vh;
 }
 
 
@@ -93,3 +118,5 @@ a {
   padding: 0 2rem;
 }
 /* Code Group End */
+
+/* Individual Blog Body End */

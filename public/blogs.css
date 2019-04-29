@@ -32,8 +32,9 @@ a {
 /* Individual Blog Body */
 .individual-blog-wrapper {
   background: rgb(230, 228, 228);
+  height: auto;
   margin: 0 auto; 
-  width: 80vw;
+  width: 90%;
 }
 .individual-blog-title {
   color: #333333;
@@ -71,11 +72,14 @@ a {
   background: #333333;
   border-radius: 1rem;
   box-shadow: 5px 10px 18px #888888;
-  margin: 1rem;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 1vw;
   width: 90%;
 }
-.individual-blog-svg-HOC-Factory-caption {
+.individual-blog-caption-group {
   border-radius: 0 0 1rem 1rem;
   color: ivory;
   font-size: 2.4vw;
@@ -87,7 +91,13 @@ a {
   background: url("/svg/HOC_factory.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  height: 35vh;
+  height: 30vw;
+}
+.individual-blog-svg-HOF-Factory {
+  background: url("/svg/HOF_factory.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 30vw;
 }
 
 

@@ -65,6 +65,7 @@
     const result = function1(value) + function1(value);
     return result;
   } 
+
   // usage
   const double = (value) => {return value + value;} 
   myHOF( double );
@@ -83,6 +84,7 @@
       return value+=1;
     }
   } 
+
   // usage
   myHOF(5)( ); // note the empty paren at the end invokes the returned function
         </code>
@@ -100,6 +102,7 @@
       return function1(data[0]) + function2(data[1]);
     }
   } 
+
   // usage
   myHOF(
     value => value * value,
@@ -115,9 +118,9 @@
     </p>
 
     <div class="individual-blog-svg-image-and-caption">
-      <div class="individual-blog-svg-HOC-Factory"></div>
-      <div class="individual-blog-svg-HOC-Factory-caption">
-        Note: We have returned a new React component with the original component inside (modified to include extra data). But we will not be able to gain access to the original component until we are using/calling our new component. At that point the new component will return our original component to the front end ui. 
+      <div class="individual-blog-svg-HOF-Factory"></div>
+      <div class="individual-blog-caption-group">
+        Note: If our HOF is returning a function then our original function will not be be available to us until we call our new function. Once that happens our original function will have access to all variables and parameters defined in the new functions run time via JavaScript's Closure mechanism.
       </div>
     </div>
 
@@ -129,7 +132,13 @@
       At a very basic sense a React Component is a function that takes props as a parameter and returns UI. So props as in 'this.props' and UI (user interface) as JSX. And JSX will become what we eventually see on our website as HTML elements.
     </p>
 
-    <p class="individual-blog-text-block">PICTURE HERE >>></p>
+    <h3 class="individual-blog-section">
+      3. Higher Order Components or HOCs
+    </h3>
+
+    <p class="individual-blog-text-block">
+      A HOC is a function that operates on React Components. This programming pattern will give us the ability to 'wrap' any component with additional logic in the form of props and methods.
+    </p>   
 
     <h3 class="individual-blog-text-header">
       Attributes of a HOC:
@@ -138,6 +147,13 @@
         <li>Accepts a react component as a parameter and returns a new react component</li>
       </ol>
     </h3>
+
+    <div class="individual-blog-svg-image-and-caption">
+      <div class="individual-blog-svg-HOC-Factory"></div>
+      <div class="individual-blog-caption-group">
+        Note: We have returned a new React component with the original component inside (modified to include extra data). But we will not be able to gain access to the original component until we are using/calling our new component. At that point the new component will return our original component to the front end ui. 
+      </div>
+    </div>
 
     <h3 class="individual-blog-section">
       What problem does a HOC solve?
@@ -155,9 +171,11 @@
       HOC's main weakness that it can override prop names on our components if we are careless. And if we add methods to the original component that are setting state then we can make code that is dificult to understand. And lastly you can chain HOCs and create a very complex statement. Like HOC1(HOC2(HOC3(HOC4(BaseComponent))))
     </p>
 
+    <br/>
     <h3 class="individual-blog-section">
       So lets make a HOC !!!
     </h3>
+    <br/>
 
     <div class="code-group-wrapper">  
       <p class="code-group-title">
@@ -167,11 +185,11 @@
         <code class="language-javascript">
   // in ./basicComponent.js
 
-  import React { Fragment }from 'react';
+  import React, { Fragment } from 'react';
 
   class BasicComponent extends React.Component {
     state = {
-      ids: []
+      ids: [ ]
     }
 
     handleIds = id => {
@@ -182,14 +200,12 @@
 
     render() {
       return (
-        &lt >
+        &lt Fragment >
           &ltdiv 
             ids={ this.state.ids }
             handleIds={ this.handleIds }
           />
-
-          &ltOtherComponent />
-        &lt / >
+        &lt/ Fragment >
       )
     }
   } 

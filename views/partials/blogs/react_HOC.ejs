@@ -183,48 +183,68 @@
       </p>
       <pre class="language-javascript">
         <code class="language-javascript">
-  // in ./basicComponent.js
-
   import React, { Fragment } from 'react';
+  import hoc from './hoc.js
 
-  class BasicComponent extends React.Component {
-    state = {
-      ids: [ ]
-    }
+  const BasicComponent = props => (
+    &lt Fragment >
+      &ltbutton 
+        onClick={ event => 
+          props.setRandom(event)
+        }
+      >
+        {
+          props.ids.map( id => (
+            &ltp key={id} >
+              {`This id number is: ${id}`}
+            &ltp>
+          ))
+        }
+      &lt / button >
+    &lt / Fragment >
+  );
 
-    handleIds = id => {
-      this.setState(prevState => {
-        ids: prevState.ids.push(id);
-      })
-    }
-
-    render() {
-      return (
-        &lt Fragment >
-          &ltdiv 
-            ids={ this.state.ids }
-            handleIds={ this.handleIds }
-          />
-        &lt/ Fragment >
-      )
-    }
-  } 
+  export default hoc(BaseComponent)
+   
         </code>
       </pre>
     </div>
     
     <div class="code-group-wrapper">  
       <p class="code-group-title">
-        Next we define our HOC and pass it the BaseComponent.
+        Next we define our HOC.
       </p>
       <pre class="language-javascript">
         <code class="language-javascript">
-  import React from 'react';
-  import BasicComponent from './basicComponent.js';
+  import React, { Component } from 'react';
 
-  function myHOC (BasicComponent) {
+  const hoc = Component => (
+    class extends Component {
+      state = {
+        ids: [ 104, 763 ]
+      }
+
+      setRandomValue = event => {
+        event.preventDefault();
+        const rand = Math.floor(Math.random() * 1000);
+        this.setState( prevState => ({
+          ids: [ ...prevState.ids, rand ]
+        }));
+      }
+
+      render() {
+        return(
+          &lt Component
+            ids={this.state.ids}
+            setRandom={this.setRandomValue}
+            { ...this.props }
+          />
+        )
+      }
+    }
+  )
     
-  } 
+  export default hoc
         </code>
       </pre>
     </div>

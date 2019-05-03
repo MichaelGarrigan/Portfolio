@@ -209,6 +209,10 @@
         </code>
       </pre>
     </div>
+
+    <p class="individual-blog-text-block">
+      So our BaseComponent has a method passed down that adds a random number into the array called 'ids' when the button is pressed. Next the component is mapping over the array of ids and displaying them in a &ltp> tag. Pretty simple yes?
+    </p>
     
     <div class="code-group-wrapper">  
       <p class="code-group-title">
@@ -218,8 +222,8 @@
         <code class="language-javascript">
   import React, { Component } from 'react';
 
-  const hoc = Component => (
-    class extends Component {
+  const hoc = OriginalComponent => (
+    class extends Component { // implicit return 
       state = {
         ids: [ 104, 763 ]
       }
@@ -234,7 +238,7 @@
 
       render() {
         return(
-          &lt Component
+          &lt OriginalComponent
             ids={this.state.ids}
             setRandom={this.setRandomValue}
             { ...this.props }
@@ -250,69 +254,15 @@
     </div>
 
     <p class="individual-blog-text-block">
-      So here we have defined a regular function that is accepting an argument that is a react component.
+      So now the hoc. The first thing to notice is that hoc is just a normal function that accepts a React Component. Next item is the implicit return that is returning a nameless react class component. It is important to remember that we are returning a new React Component that is nameless. So we will not have access to our original React component until the component is acually rendered in our application. The last thing to point our is now if we wanted to add this random number generator that is named 'setRandomValue' and the accompaning ids array we can use this hoc to wrap any component that we would like and share this logic.
     </p>
-
-    <div class="code-group-wrapper">  
-      <p class="code-group-title">
-        Now we return a new component that returns our BasicComponent.
-      </p>
-      <pre class="language-javascript">
-        <code class="language-javascript">
-  import React from 'react';
-  import BasicComponent from './basicComponent.js';
-
-  function myHOC (BasicComponent) {
-    return class HOC extends React.Component {
-      render() {
-        return &ltBasicComponent />
-      }
-    }
-  } 
-        </code>
-      </pre>
-    </div>
 
     <p class="individual-blog-text-block">
-      So now our regular function is returning a new class based react component that in turn is returning our argument. This wrapper is important because if we just return our original component with adding properties/methods and not having to mutate the original component.
+      Thanks for making it to the end. HAPPY CODING!!!
     </p>
-
-    <div class="code-group-wrapper">  
-      <p class="code-group-title">
-        Now we add properties and methods to our BasicComponent.
-      </p>
-      <pre class="language-javascript">
-        <code class="language-javascript">
-  import React from 'react';
-  import BasicComponent from './basicComponent.js';
-
-  function myHOC (BasicComponent) {
-    return class HOC extends React.Component {
-      constructor(props) {
-        super(props);
-        this.injectedProp = "A special string.";
-      }
-      injectedMethod = value => value += 1;
-      }
-      render() {
-        return (
-          &ltBasicComponent 
-            injectedProp={ this.injectedProp }
-            injectedMethod={ this.injectedMethod }
-            { ...this.props } // note we are passing props through
-          /&gt
-        )
-      }
-    }
-  } 
-        </code>
-      </pre>
-    </div>
-
-    <p class="individual-blog-text-block">
-      The component named HOC that we are returning contains the logic to react to any conditions, state change or user invoked events and provide the &ltBasicComponent />  with the appropriate props. And lastly it is very important to pass throught the props via the spread operator { ...props }. If this is not provided to our component then it will not recieve any of the props that are being passed down. The last item to point out is to be aware of the naming of the props that you add to the &ltBasicComponent /> because it can be tricky to track down a bug when two props names are the same.
-    </p>
-
+    <br/>
+    <br/>
+    <br/>
     </main>
   </body>
 <script src="/prismJS.js"></script>

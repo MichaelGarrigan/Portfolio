@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => res.render('pages/index'));
-app.get('/art', (req, res) => res.render('pages/art'));
+app.get('/applications', (req, res) => res.render('pages/applications'));
 app.get('/blog', (req, res) => res.render('pages/blog'));
 app.get('/resume', (req, res) => res.render('pages/resume'));
 app.get('/blog/:blog_name', (req, res) => {

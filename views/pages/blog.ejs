@@ -1,34 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
+  <%- include("../partials/head") %>
   <link rel="stylesheet" type="text/css" media="screen" href="/blog.css">
-<body id='blog-overflow-wrapper'>
-  <main id='blog-main-wrapper'>
 
-    <%- include('../partials/backgroundSVGHeader') %>
-    <%- include('../partials/header') %>
+  <body>
+    <main id="blog-main">
+      <%- include('../partials/nav') %>
     
-    <section class="blog-main-body">
-      <div class="blog-main-spacer"></div>
-      <h1>Technical Blog</h1>
-      <div class="blog-main-entries">
-        <a href="/blog/accessing_nested_files_python">
-          <div class="blog-main-entry">
-            Accessing Nested Files in Python
-          </div>
-        </a>
-        <a href="/blog/react_HOC">
-          <div class="blog-main-entry">
-            React HOC's
-          </div>
-        </a>
-        <a href="/blog/sass_vs_less">
-          <div class="blog-main-entry">
-            Sass vs. Less
-          </div>
-        </a>
-      </div>
-    </section>
-  </main>
-</body>
+      <section class="blog-section">
+      
+        <div class="blog-section-spacer"></div>
+        <h1>Technical Blog</h1>
+        <div class="blog-main-entries">
+          <a href="/blog/accessing_nested_files_python">
+            <div class="blog-main-entry">
+              Accessing Nested Files in Python
+            </div>
+          </a>
+          <a href="/blog/react_HOC">
+            <div class="blog-main-entry">
+              React HOC's
+            </div>
+          </a>
+          <a href="/blog/sass_vs_less">
+            <div class="blog-main-entry">
+              Sass vs. Less
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html> 

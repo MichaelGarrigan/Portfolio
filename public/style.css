@@ -1,18 +1,143 @@
 
-/* GLOBALS */
+/* ==================
+      VARIABLES 
+=================== */
+:root {
+  --overflow-gray: #dbd0d7;
+  --active-link: #ff8c00;
+  --active-link-stroke: #ff4500;
+  --gray-1: #ccc;
+  --gray-2: #474747;
+  --gray-3: #333;
+}
+
+/* ==================
+      GLOBALS 
+=================== */
 * {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--overflow-gray);
+  background-image: url('img/linen.png');
+  background-repeat: repeat;
+  min-height: 100vh;
+  width: 100vw;
 }
 a {
   text-decoration: none;
 }
+
+/* ==================
+        NAV 
+=================== */
+#svg-nav {
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+}
+#svg-nav-background {
+  color: #326792;
+  color: #464545;
+  fill: var(--gray-3);
+}
+.svg-nav-flank {
+  fill: var(--gray-2);
+}
+.svg-nav-link-text {
+  fill: var(--gray-1);
+}
+.svg-nav-link {
+  cursor: pointer;
+  fill: var(--gray-2);
+}
+.svg-nav-name {
+  fill: var(--active-link);
+}
+
+
+.svg-link-resume:hover .svg-nav-link {
+  fill: var(--active-link);
+  stroke: var(--active-link-stroke);
+  stroke-width: 1px;
+}
+.svg-link-resume:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+.svg-link-gh:hover .svg-nav-link {
+  fill: var(--active-link);
+  stroke: var(--active-link-stroke);
+  stroke-width: 1px;
+}
+.svg-link-gh:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+.svg-link-applications:hover .svg-nav-link {
+  fill: var(--active-link);
+  stroke: var(--active-link-stroke);
+  stroke-width: 1px;
+}
+.svg-link-applications:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+.svg-link-li:hover .svg-nav-link {
+  fill: var(--active-link);
+  stroke: var(--active-link-stroke);
+  stroke-width: 1px;
+}
+.svg-link-li:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+.svg-link-blog:hover .svg-nav-link {
+  fill: var(--active-link);
+  stroke: var(--active-link-stroke);
+  stroke-width: 1px;
+}
+.svg-link-blog:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+.svg-link-home:hover {
+  cursor: pointer;
+}
+
+
+/* ==================
+     INDEX PAGE 
+=================== */
+#index-main {
+  background: var(--gray-3);
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 100vw;
+}
+#index-section {
+
+}
+
 /* MEDIA QUERIES */
-@media (min-aspect-ratio: 4/3) {
-  main#index-main-wrapper {
-    left: 0;
-    right: 0;
-    max-width: calc(70vw);
+@media screen and (min-width: 1000px) {
+  #svg-nav {
+    width: 1000px;
+  }
+  #index-main {
+    background: var(--gray-3);
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 1000px;
+  }
+}
+/* @media (min-aspect-ratio: 4/3) {
+  #index-main {
+    background: yellowgreen;
+    margin: 0 auto;
+    max-width: 80vw;
+    min-height: 100vh;
+  }
+  #svg-nav {
+    margin: 0 auto;
+    max-width: 80vw;
   }
   #svg-background-header {
     max-width: calc(70vw);
@@ -79,7 +204,7 @@ a {
     width: 100%;
   }
   
-  /* Project Icons */
+  
   .tech-icons {
     height: 5vw !important;
     width: 5vw !important;
@@ -108,9 +233,9 @@ a {
     margin-top: 5vw !important;
     width: 20vw !important;
   }
-}
+} */
 
-body#index-overflow-wrapper {
+/* body#index-overflow-wrapper {
   position: absolute;
   width: 100vw;
 }
@@ -125,44 +250,14 @@ main#index-project-wrapper {
   height: 100%;
   left: 0;
   margin: 0 auto;
-  /* position: absolute; */
+  
   right: 0;
   top: 0;
   width: 100%;
-  /* z-index: 3 !important; */
-}
-
-/* SVG Background Header */
-#svg-background-header {
-  position: fixed;
-  width: 100%;
-  z-index: 10;
-}
-.flank-header {
-  fill: #96b3b6;
-}
-.header-link {
-  fill: #3a9ca7;
   
-}
-#blog-header-text-link {
-  font-style:normal;
-  font-weight:normal;
-  font-size:8.60610676px;
-  line-height:1.25;
-  font-family:sans-serif;
-  letter-spacing:0px;
-  word-spacing:0px;
-  fill:#333333;
-  fill-opacity:1;
-  stroke:none;
-  stroke-width:0.26458332;
-}
-#svg-main-background .blackout-header {
-  fill: #333333;
-}
+} */
 
-/* SVG Background Header End */
+
 
 /* SVG Background Body */
 #svg-background-body {
@@ -173,6 +268,7 @@ main#index-project-wrapper {
   z-index: 3;
 }
 /* SVG Background Body End */
+
 
 /* Header  */
 .header-main {

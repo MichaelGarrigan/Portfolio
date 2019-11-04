@@ -271,7 +271,7 @@ a {
   top: 40vw;
 }
 .desktop-peddle-svg {
-  background: url('./svg/desktop_peddle.svg');
+  background: url('./svg/geo-desktop1.svg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40vw;
@@ -284,7 +284,7 @@ a {
   top: 93vw;
 }
 .smartphone-moodvie-svg {
-  background: url('./svg/smartphone_right_moodvie.svg');
+  background: url('./svg/reactive-phone1.svg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40vw;
@@ -297,7 +297,7 @@ a {
   top: 146vw;
 } 
 .desktop-vson-svg {
-  background: url('./svg/desktop_left_vson.svg');
+  background: url('./svg/port-desktop1.svg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40vw;
@@ -310,7 +310,7 @@ a {
   top: 199vw;
 }
 .smartphone-nyde-svg {
-  background: url('./svg/smartphone_right_nyde.svg');
+  background: url('./svg/nyde-phone1.svg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40vw;

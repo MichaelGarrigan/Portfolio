@@ -30,6 +30,7 @@ a {
   text-decoration: none;
 }
 
+
 /* ==================
         NAV 
 =================== */
@@ -61,43 +62,72 @@ a {
 .svg-link-resume:hover .svg-nav-link {
   fill: var(--active-link);
   stroke: var(--active-link-stroke);
-  stroke-width: 1px;
+  stroke-width: 0.5px;
 }
 .svg-link-resume:hover .svg-nav-link-text {
   fill: var(--gray-3);
 }
+.svg-link-resume-active .svg-nav-link {
+  fill: var(--active-link);
+  stroke: var(--active-link-stroke);
+  stroke-width: 0.5px;
+}
+.svg-link-resume-active .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+
 .svg-link-gh:hover .svg-nav-link {
   fill: var(--active-link);
   stroke: var(--active-link-stroke);
-  stroke-width: 1px;
+  stroke-width: 0.5px;
 }
 .svg-link-gh:hover .svg-nav-link-text {
   fill: var(--gray-3);
 }
+
 .svg-link-applications:hover .svg-nav-link {
   fill: var(--active-link);
   stroke: var(--active-link-stroke);
-  stroke-width: 1px;
+  stroke-width: 0.5px;
 }
 .svg-link-applications:hover .svg-nav-link-text {
   fill: var(--gray-3);
 }
+.svg-link-applications-active .svg-nav-link {
+  fill: var(--active-link);
+  stroke: var(--active-link-stroke);
+  stroke-width: 0.5px;
+}
+.svg-link-applications-active .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+
 .svg-link-li:hover .svg-nav-link {
   fill: var(--active-link);
   stroke: var(--active-link-stroke);
-  stroke-width: 1px;
+  stroke-width: 0.5px;
 }
 .svg-link-li:hover .svg-nav-link-text {
   fill: var(--gray-3);
 }
+
 .svg-link-blog:hover .svg-nav-link {
   fill: var(--active-link);
   stroke: var(--active-link-stroke);
-  stroke-width: 1px;
+  stroke-width: 0.5px;
 }
 .svg-link-blog:hover .svg-nav-link-text {
   fill: var(--gray-3);
 }
+.svg-link-blog-active .svg-nav-link {
+  fill: var(--active-link);
+  stroke: var(--active-link-stroke);
+  stroke-width: 0.5px;
+}
+.svg-link-blog-active .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+
 .svg-link-home:hover {
   cursor: pointer;
 }
@@ -110,268 +140,32 @@ a {
   background: var(--gray-3);
   margin: 0 auto;
   min-height: 100vh;
+  position: relative;
   width: 100vw;
 }
+
 #index-section {
 
 }
 
-/* MEDIA QUERIES */
-@media screen and (min-width: 1000px) {
-  #svg-nav {
-    width: 1000px;
-  }
-  #index-main {
-    background: var(--gray-3);
-    margin: 0 auto;
-    min-height: 100vh;
-    width: 1000px;
-  }
-}
-/* @media (min-aspect-ratio: 4/3) {
-  #index-main {
-    background: yellowgreen;
-    margin: 0 auto;
-    max-width: 80vw;
-    min-height: 100vh;
-  }
-  #svg-nav {
-    margin: 0 auto;
-    max-width: 80vw;
-  }
-  #svg-background-header {
-    max-width: calc(70vw);
-  }
-  main#index-project-wrapper {
-    max-width: calc(70vw);
-  }
-  .header-main {
-    max-width: calc(70vw);
-  }
-  .header-title-flex {
-    font-size: 7vw !important;
-  }
-  .sub-titles {
-    font-size: 1.4vw !important;
-  }
-  .peddle-wrapper{
-    height: 24vw !important;
-    left: 16vw !important;
-    top: 32vw !important;
-    width: 50vw !important;
-  }
-  .nyde-wrapper {
-    height: 24vw !important;
-    left: 4vw !important;
-    top: 69vw !important;
-    width: 50vw !important;
-  }
-  .vson-wrapper {
-    height: 24vw !important;
-    left: 16vw !important;
-    top: 106vw !important;
-    width: 50vw !important;
-  }
-  .moodvie-wrapper {
-    height: 24vw !important;
-    left: 4vw !important;
-    top: 144vw !important;
-    width: 50vw !important;
-  }
-  .my-portfolio-wrapper {
-    height: 24vw !important;
-    left: 16vw !important;
-    top: 181vw !important;
-    width: 50vw !important;
-  }
-  .project-title {
-    font-size: 4vw !important;
-  }
-  .project-subtitle {
-    font-size: 1.8vw !important;
-  }
-  .project-bullets {
-    font-size: 1.2vw !important;
-  }
-  .project-tech {
-    font-size: 2vw !important;
-  }
-  .project-tech-icons {
-    align-items: center;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1vw;
-    width: 100%;
-  }
-  
-  
-  .tech-icons {
-    height: 5vw !important;
-    width: 5vw !important;
-  }
-  .desktop-peddle-svg {
-    height: 30vw !important;
-    margin-top: 5vw !important;
-    width: 25vw !important;
-  }
-  
-  .smartphone-nyde-svg {
-    height: 30vw !important;
-    margin-top: 5vw !important;
-    width: 20vw !important;
-  }
-  .nyde-title {
-    font-size: 2.5vw !important;
-  }
-  .desktop-vson-svg {
-    height: 30vw !important;
-    margin-top: 5vw !important;
-    width: 25vw !important;
-  }
-  .smartphone-moodvie-svg {
-    height: 30vw !important;
-    margin-top: 5vw !important;
-    width: 20vw !important;
-  }
-} */
-
-/* body#index-overflow-wrapper {
-  position: absolute;
-  width: 100vw;
-}
-main#index-main-wrapper {
-  background: #333333;
-  margin: 0 auto;
-  position: absolute;
-  width: 100%;
-  z-index: 5 !important;
-}
-main#index-project-wrapper {
-  height: 100%;
-  left: 0;
-  margin: 0 auto;
-  
-  right: 0;
-  top: 0;
-  width: 100%;
-  
-} */
-
-
-
-/* SVG Background Body */
-#svg-background-body {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 3;
-}
-/* SVG Background Body End */
-
-
-/* Header  */
-.header-main {
-  position: fixed;
-  left: 0;
-  margin: auto;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 20;
-}
- 
-header {
-  margin: 0 auto;  
-}
-
-.header-title-flex {
-  align-items: center;
-  color: #ff8c00;
-  display: flex;
-  flex-flow: column;
-  font-size: 9vw;
-  font-weight: 600;
-  justify-content: center;
-  
-}
-.header-title-flex > a {
-  color: #ff8c00;
-}
-
-.header-subtitle-flex {
-  align-items: center;
-  display: flex;
-  justify-content: space-evenly;
-}
-.sub-titles {
-  color: #bbb3b3;
-  font-size: 2vw;
-  font-weight: 500;
-  margin: .5rem .5rem 1rem;
-}
-.sub-title-divider {
-  color: #bbb3b3;
-  font-size: 2vw;
-  font-weight: 500;
-  margin: .5rem .5rem 1rem;
-}
-/* Splash End */
-
-/* Resume Start */
-.resume-main {
+/* ==============
+    RESUME 
+=============== */
+.resume-section {
   height: 130vw;
   width: 100%;
 }
 .resume-offset {
-  height: 25.5vw;
+  height: 28vw;
 }
 .resume-wrapper {
   height: 100%;
 }
-/* Resume End */
 
-/* Art Start */
-.art-main {
-  height: 130vw;
-  width: 100vw;
-}
-.art-offset {
-  height: 25.5vw;
-}
-.art-wrapper {
-  height: 100%;
-}
-/* Art End */
-
-/* PEDDLE LOGO 50 */
-.flex-50 {
-  align-content: center;
-  align-items: center;
-  display: flex;
-  justify-content: center; }
-
-.crank-color-50 {
-  background: url("../img/peddle50.png");
-  height: 58px;
-  width: 50px; }
-
-.pre-text-50 {
-  color: #068585;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 60px;
-  margin: 0;
-  padding: 10px 5px 0 0; }
-
-.post-text-50 {
-  color: #068585;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  font-size: 60px;
-  padding: 10px 0 0 5px; }
-/* THINGS I'VE MADE END */
-
-/* Projects Start */
-/* Global projects elements */
+/* ==============
+   PROJECTS 
+=============== */
+/* Global Elements */
 .project-wrapper{
   align-items: center;
   display: flex;
@@ -402,6 +196,7 @@ header {
   color: rgb(226, 225, 222);
   font-size: 1.6vw;
 }
+
 .project-tech {
   color: rgb(226, 225, 222);
   font-size: 2.5vw;
@@ -415,7 +210,7 @@ header {
   margin-top: 1vw;
   width: 100%;
 }
-
+/* Global Elements End */
 /* Project Icons */
 .tech-icons {
   background-repeat: no-repeat;
@@ -432,8 +227,14 @@ header {
 .node-icon {
   background: url('./svg/icons/node.svg');
 }
+.express-icon {
+  background: url('./svg/icons/express.svg');
+}
 .aws-icon {
   background: url('./svg/icons/aws.svg');
+}
+.azure-icon {
+  background: url('./svg/icons/azure.svg');
 }
 .postgresql-icon {
   background: url('./svg/icons/postgresql.svg');
@@ -459,27 +260,54 @@ header {
 .ejs-icon {
   background: url('./svg/icons/ejs.svg');
 }
-/* Global projects elements end*/
+.less-icon {
+  background: url('./svg/icons/less.svg');
+}
 
-/* 1) Peddle */
-.peddle-wrapper{
+
+/* 1) NYC Geo */
+.nycGeo-wrapper{
   left: 22vw;
-  top: 46vw;
+  top: 40vw;
 }
 .desktop-peddle-svg {
-  background: url('./desktop_peddle.svg');
+  background: url('./svg/desktop_peddle.svg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 40vw;
   margin-top: 5vw;
   width: 35vw;
 }
-/* 1) Peddle End */
-
-/* 2) NYDE */
+/* 2) Reactive d3 */
+.reactive-wrapper {
+  left: 3vw;
+  top: 93vw;
+}
+.smartphone-moodvie-svg {
+  background: url('./svg/smartphone_right_moodvie.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 8vw;
+  width: 25vw;
+}
+/* 3) Portfolio */
+.portfolio-wrapper {
+  left: 22vw;
+  top: 146vw;
+} 
+.desktop-vson-svg {
+  background: url('./svg/desktop_left_vson.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 5vw;
+  width: 35vw;
+}
+/* 4) NYDE */
 .nyde-wrapper {
   left: 3vw;
-  top: 99vw;
+  top: 199vw;
 }
 .smartphone-nyde-svg {
   background: url('./svg/smartphone_right_nyde.svg');
@@ -491,41 +319,167 @@ header {
 }
 .nyde-title {
   color: rgb(226, 225, 222);
-  font-size: 4vw;
+  font-size: 6vw;
 }
-/* 2) NYDE End */
-/* 3) VSON */
-.vson-wrapper {
-  left: 22vw;
-  top: 152vw;
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1000px) {
+  #svg-nav {
+    width: 1000px;
+  }
+  #index-main {
+    background: var(--gray-3);
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 1000px;
+  }
+  .resume-offset {
+    height: 230px;
+  }
+
+  /* Projects */
+  .project-wrapper{
+    height: 340px;
+    width: 750px;
+  }
+  
+  .project-content {
+    height: 100%;
+    width: 70%;
+  }
+  .project-title {
+    font-size: 80px;
+  }
+  .project-subtitle {
+    font-size: 22px;
+  }
+  .project-bullets {
+    font-size: 16px;
+  }
+  
+  .project-tech {
+    color: rgb(226, 225, 222);
+    font-size: 2.5vw;
+    text-align: center;
+    width: 100%;
+  }
+  .project-tech-icons {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1vw;
+    width: 100%;
+  }
+  .nycGeo-wrapper{
+    left: 220px;
+    top: 400px;
+  }
+  .reactive-wrapper{
+    left: 30px;
+    top: 930px;
+  }
+  .portfolio-wrapper {
+    left: 220px;
+    top: 1460px;
+  } 
+  .nyde-wrapper {
+    left: 30px;
+    top: 1990px;
+  }
+  .nyde-title {
+    font-size: 60px;
+  }
+  
+  .project-title {
+    font-size: 80px;
+  }
+  .project-subtitle {
+    font-size: 22px;
+  }
+  .project-bullets {
+    font-size: 16px;
+  }
+  .project-tech {
+    font-size: 25px;
+  }
+  .project-tech-icons {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  
+  .tech-icons {
+    height: 70px;
+    width: 70px;
+  }
+  .desktop-peddle-svg {
+    height: 400px;
+    margin-top: 50px;
+    width: 350px;
+  }
+  .smartphone-nyde-svg {
+    height: 400px;
+    margin-top: 80px;
+    width: 250px;
+  }
+  .desktop-vson-svg {
+    height: 400px;
+    margin-top: 50px;
+    width: 350px;
+  }
+  .smartphone-moodvie-svg {
+    height: 400px;
+    margin-top: 80px;
+    width: 250px;
+  }
 }
-.desktop-vson-svg {
-  background: url('./svg/desktop_left_vson.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 40vw;
-  margin-top: 5vw;
-  width: 35vw;
+
+/* tooltips */
+.tooltip {
+  display: inline-block;
+  position: relative;
 }
-/* 3) VSON End */
-/* 4) Moodvie */
-.moodvie-wrapper {
-  left: 3vw;
-  top: 205vw;
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #fc8c00;
+  color: #333;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
 }
-.smartphone-moodvie-svg {
-  background: url('./svg/smartphone_right_moodvie.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 40vw;
-  margin-top: 8vw;
-  width: 25vw;
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fc8c00 transparent transparent transparent;
 }
-/* 4) Moodvie End */
-/* 5) My Portfolio */
-.my-portfolio-wrapper {
-  left: 22vw;
-  top: 258vw;
-} 
-/* 5) My Portfolio End */
-/* Projects End */
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

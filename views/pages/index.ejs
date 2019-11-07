@@ -4,10 +4,17 @@
   <%- include("../partials/head") %>
   <body>
     <main id="index-main">
-      <%- include("../partials/nav") %>
-      <section id="index-section">
+      <main id='index-main'>
+    
+      <%- include('../partials/nav', {link: link}) %>
+      <%- include('../partials/svgBody') %>
 
-      </section>
+      <%- include('../partials/projects/nycGeo.ejs') %>
+      <%- include('../partials/projects/reactive.ejs') %>
+      <%- include('../partials/projects/portfolio.ejs') %> 
+      <%- include('../partials/projects/NYDE.ejs') %> 
+        
+    </main>
     </main>
   </body>
 </html> 

@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Nested Py Files</title>
-  <link type="text/css" rel="stylesheet" href="/prism.css"  />
-  <link type="text/css" rel="stylesheet" href="/blogs.css"  />
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nested Py Files</title>
+    <link type="text/css" rel="stylesheet" href="/prism.css"  />
+    <link type="text/css" rel="stylesheet" href="/styles/global.css"  />
+    <link type="text/css" rel="stylesheet" href="/styles/blogs.css"  />
+  </head>
 <body>
   <main class="individual-blog-wrapper">
 
-    <%- include('../individualBlogHeader') %>
+    <%- include('../blogSubheading') %>
 
     <h1 class="individual-blog-title">
       Accessing Nested Files in our Python App
@@ -24,6 +25,8 @@
     <h2 class="individual-blog-sub-title">
       Python by default cannot find a nested file.
     </h2>
+
+    <br />
 
     <p class="individual-blog-text-block">
       When our Python project starts to get more complex we will inevetably write multiple .py files and then we will start to organize our .py files into directories and sub-directories. 
@@ -135,9 +138,9 @@
       So before we go into the solution lets define some terms: 
     </p>
     <p class="individual-blog-text-block">
-      Blocks: a piece of Python code that will be executed as a unit
-      An Example is: a module, a function body and class definitions
-      Please note here that a module can be a .py file that we define
+      Blocks: a piece of Python code that will be executed as a unit.
+      An Example is: a module, a function body and class definitions.
+      Please note here that a module can be a .py file that we define.
     </p>
     <p class="individual-blog-text-block">
       Module: An organizational unit of Python code. Modules have a namespace and are loaded by Python via importing.

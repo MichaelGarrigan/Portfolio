@@ -1,0 +1,328 @@
+
+/* ==================
+     INDEX PAGE 
+=================== */
+#index-main {
+  background: var(--gray-3);
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+}
+
+/* ==============
+   PROJECTS 
+=============== */
+/* Global Elements */
+.project-wrapper{
+  align-items: center;
+  display: flex;
+  height: 34vw;
+  position: absolute;
+  width: 75vw;
+  z-index: 7 !important;
+}
+
+.project-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
+  justify-content: space-between;
+  width: 70%;
+}
+.project-title {
+  color: rgb(226, 225, 222);
+  font-size: 8vw;
+}
+.project-subtitle {
+  color: rgb(226, 225, 222);
+  font-size: 2.2vw;
+}
+.project-bullets {
+  color: rgb(226, 225, 222);
+  font-size: 1.6vw;
+}
+
+.project-tech {
+  color: rgb(226, 225, 222);
+  font-size: 2.5vw;
+  text-align: center;
+  width: 100%;
+}
+.project-tech-icons {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1vw;
+  width: 100%;
+}
+/* Global Elements End */
+/* Project Icons */
+.tech-icons {
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 7vw;
+  width: 7vw;
+}
+.react-icon {
+  background: url('../svg/icons/react.svg');
+}
+.redux-icon {
+  background: url('../svg/icons/redux.svg');
+}
+.node-icon {
+  background: url('../svg/icons/node.svg');
+}
+.express-icon {
+  background: url('../svg/icons/express.svg');
+}
+.aws-icon {
+  background: url('../svg/icons/aws.svg');
+}
+.azure-icon {
+  background: url('../svg/icons/azure.svg');
+}
+.postgresql-icon {
+  background: url('../svg/icons/postgresql.svg');
+}
+.mui-icon {
+  background: url('../svg/icons/material_ui.svg');
+}
+.google-map-icon {
+  background: url('../svg/icons/google_map_api.svg');
+}
+.mysql-icon {
+  background: url('../svg/icons/mysql.svg');
+}
+.d3-icon {
+  background: url('../svg/icons/d3.svg');
+}
+.react-router-icon {
+  background: url('../svg/icons/reactrouter.svg');
+}
+.mongoDB-icon {
+  background: url('../svg/icons/mongodb.svg');
+}
+.ejs-icon {
+  background: url('../svg/icons/ejs.svg');
+}
+.less-icon {
+  background: url('../svg/icons/less.svg');
+}
+
+
+/* 1) NYC Geo */
+.nycGeo-wrapper{
+  left: 22vw;
+  top: 40vw;
+}
+.desktop-peddle-svg {
+  background: url('../svg/geo-desktop1.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 5vw;
+  width: 35vw;
+}
+/* 2) Reactive d3 */
+.reactive-wrapper {
+  left: 3vw;
+  top: 93vw;
+}
+.smartphone-moodvie-svg {
+  background: url('../svg/reactive-phone1.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 8vw;
+  width: 25vw;
+}
+/* 3) Portfolio */
+.portfolio-wrapper {
+  left: 22vw;
+  top: 146vw;
+} 
+.desktop-vson-svg {
+  background: url('../svg/port-desktop1.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 5vw;
+  width: 35vw;
+}
+/* 4) NYDE */
+.nyde-wrapper {
+  left: 3vw;
+  top: 199vw;
+}
+.smartphone-nyde-svg {
+  background: url('../svg/nyde-phone1.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 8vw;
+  width: 25vw;
+}
+.nyde-title {
+  color: rgb(226, 225, 222);
+  font-size: 6vw;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1000px) {
+  
+  #index-main {
+    background: var(--gray-3);
+    margin: 0 auto;
+    min-height: 100vh;
+    width: 1000px;
+  }
+  
+  /* Projects */
+  .project-wrapper{
+    height: 340px;
+    width: 750px;
+  }
+  
+  .project-content {
+    height: 100%;
+    width: 70%;
+  }
+  .project-title {
+    font-size: 80px;
+  }
+  .project-subtitle {
+    font-size: 22px;
+  }
+  .project-bullets {
+    font-size: 16px;
+  }
+  
+  .project-tech {
+    color: rgb(226, 225, 222);
+    font-size: 2.5vw;
+    text-align: center;
+    width: 100%;
+  }
+  .project-tech-icons {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1vw;
+    width: 100%;
+  }
+  .nycGeo-wrapper{
+    left: 220px;
+    top: 400px;
+  }
+  .reactive-wrapper{
+    left: 30px;
+    top: 930px;
+  }
+  .portfolio-wrapper {
+    left: 220px;
+    top: 1460px;
+  } 
+  .nyde-wrapper {
+    left: 30px;
+    top: 1990px;
+  }
+  .nyde-title {
+    font-size: 60px;
+  }
+  
+  .project-title {
+    font-size: 80px;
+  }
+  .project-subtitle {
+    font-size: 22px;
+  }
+  .project-bullets {
+    font-size: 16px;
+  }
+  .project-tech {
+    font-size: 25px;
+  }
+  .project-tech-icons {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  
+  .tech-icons {
+    height: 70px;
+    width: 70px;
+  }
+  .desktop-peddle-svg {
+    height: 400px;
+    margin-top: 50px;
+    width: 350px;
+  }
+  .smartphone-nyde-svg {
+    height: 400px;
+    margin-top: 80px;
+    width: 250px;
+  }
+  .desktop-vson-svg {
+    height: 400px;
+    margin-top: 50px;
+    width: 350px;
+  }
+  .smartphone-moodvie-svg {
+    height: 400px;
+    margin-top: 80px;
+    width: 250px;
+  }
+}
+
+/* tooltips */
+.tooltip {
+  display: inline-block;
+  position: relative;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #fc8c00;
+  color: #333;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #fc8c00 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

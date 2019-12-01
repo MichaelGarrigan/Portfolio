@@ -1,0 +1,109 @@
+
+/* ==================
+        NAV 
+=================== */
+#svg-nav {
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
+}
+#svg-nav-background {
+  color: #326792;
+  color: #464545;
+  fill: var(--gray-3);
+}
+.svg-nav-flank {
+  fill: var(--gray-2);
+}
+.svg-nav-link-text {
+  fill: var(--gray-1);
+}
+.svg-nav-link {
+  cursor: pointer;
+  fill: var(--gray-2);
+}
+.svg-nav-name {
+  fill: var(--orange);
+}
+
+
+.svg-link-resume:hover .svg-nav-link {
+  fill: var(--orange);
+  stroke: var(--orange-red);
+  stroke-width: 0.5px;
+}
+.svg-link-resume:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+.svg-link-resume-active .svg-nav-link {
+  fill: var(--orange);
+  stroke: var(--orange-red);
+  stroke-width: 0.5px;
+}
+.svg-link-resume-active .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+
+.svg-link-gh:hover .svg-nav-link {
+  fill: var(--orange);
+  stroke: var(--orange-red);
+  stroke-width: 0.5px;
+}
+.svg-link-gh:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+
+.svg-link-applications:hover .svg-nav-link {
+  fill: var(--orange);
+  stroke: var(--orange-red);
+  stroke-width: 0.5px;
+}
+.svg-link-applications:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+.svg-link-applications-active .svg-nav-link {
+  fill: var(--orange);
+  stroke: var(--orange-red);
+  stroke-width: 0.5px;
+}
+.svg-link-applications-active .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+
+.svg-link-li:hover .svg-nav-link {
+  fill: var(--orange);
+  stroke: var(--orange-red);
+  stroke-width: 0.5px;
+}
+.svg-link-li:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+
+.svg-link-blog:hover .svg-nav-link {
+  fill: var(--orange);
+  stroke: var(--orange-red);
+  stroke-width: 0.5px;
+}
+.svg-link-blog:hover .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+.svg-link-blog-active .svg-nav-link {
+  fill: var(--orange);
+  stroke: var(--orange-red);
+  stroke-width: 0.5px;
+}
+.svg-link-blog-active .svg-nav-link-text {
+  fill: var(--gray-3);
+}
+
+.svg-link-home:hover {
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1000px) {
+  #svg-nav {
+    margin: 0 auto;
+    width: 1000px;
+  }
+}

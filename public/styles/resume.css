@@ -1,0 +1,33 @@
+
+/* ==============
+    RESUME 
+=============== */
+#resume-main {
+  background: var(--gray-2);
+  margin: 0 auto;
+  width: 100%;
+}
+.resume-section {
+  height: 130vw;
+  width: 100%;
+}
+.resume-offset {
+  background: var(--gray-3);
+  height: 28vw;
+}
+.resume-wrapper {
+  height: 100%;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1000px) {
+  #resume-main {
+    background: var(--gray-2);
+    margin: 0 auto;
+    width: 1000px;
+  }
+  .resume-offset {
+    background: var(--gray-3);
+    height: 230px;
+  }
+}

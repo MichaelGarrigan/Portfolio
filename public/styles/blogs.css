@@ -126,6 +126,9 @@
 /* Individual Blog Body End */
 
 @media screen and (min-width: 1000px) {
+  .individual-blog-header {
+    height: 100px;
+  }
   .individual-blog-main-title {
     font-size: 70px;
   }
@@ -135,7 +138,32 @@
   }
 
   .individual-blog-wrapper {
-    padding: 0 55px; 
     width: 1000px;
+  }
+  .individual-blog-title {
+    font-size: 60px;
+    margin: 41px auto 21px;
+  }
+  .individual-blog-sub-title {
+    font-size: 44px;
+  }
+  .individual-blog-text-block {
+    font-size: 30px;
+    margin: 20px 0;
+    padding: 0 50px;
+  }
+  .individual-blog-text-header {
+    font-size: 35px;
+    margin: 20px 0;
+    padding: 0 100px;
+  }
+  .individual-blog-section {
+    font-size: 50px;
+  }
+  .code-group-wrapper {
+    margin: 32px;
+  }
+  .code-group-title {
+    font-size: 30px;
   }
 }

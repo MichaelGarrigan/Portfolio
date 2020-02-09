@@ -1,0 +1,84 @@
+Notes from Google Chrome Developers conferance talk on May 13, 2019
+Video title 'Speed at Scale'
+
+A workflow for Walmart Grocery
+  - A job checks then logs the size of all app builds
+  - PR fails if main bundle size change is > 1%
+  - If PR fails, it moves to a performance engineer for review
+
+Performance Budgets:
+  Ways to measure various performance metrics of our application
+    1) Time -- less than 2 seconds TTI 
+    2) Resources -- less than 150 KB of JS
+    3) Performance Score -- 90+ Perf score at lighthouse audit
+
+  * A new product is out that can help with budgeting
+    link https://developers.google.com/web/tools/lighthouse/audits/budgets
+
+
+Images - (Strategies for dealing with large volumes of image files)
+  - Lazy Loading offscreen Images
+  - Use a SVG placeholder w/ image dimensions to avoid reflow
+  - Progressive image loading or Low quality placeholder
+  - Image CDN
+
+/**
+*
+* NOTE: httparchive.org is a resource of archived web performance metrics
+*
+*/
+
+57% of JS execution time is spent on third party code
+
+Strategies for dealing with large JS file sizes
+1) Defer third party JS
+2) Defer Google Tag Manager
+3) Lazy load 3rd party embeds on user interaction 
+  - such as hovering over embed for greater than 500ms
+
+Alternatives to removing third party libraries
+  - Depricate
+  - Replace -> Is this library tree shakable?
+  - Defer
+  - Update
+
+Tokopedia Example
+  - Render landing page in Svelte and use service workers to precache 
+      React app in th e background
+  - React version 320 KB 
+  - Svelte version 37 KB
+  - other alternatives: lit-html and Preact
+
+Code Spliting
+  - Webpack generated
+  - Suspense and Lazy
+
+PRPL Pattern
+  - Push : minimal code to get interactive
+  - Render : fast
+  - Precache : other routes w/ service workers
+  - Lazy Load : JS on demand
+
+Fonts
+  - font-display: swap;
+
+CSS
+  critical CSS 
+    - inline critical css and deliver doc in less than 14 KB
+    - any other CSS we should load async
+
+Compression with Brotli for JS and CSS
+
+Adaptive Server
+  - different application functionality and image quality based
+    on network connection and device
+
+Dynamic CSS
+
+  Edge Side Inclusion (ESI)
+    this is a markup lang for assembling docs as a CDN 
+
+    - this system works by having the FE hitting a CDN of cached 
+      CSS files that are based on network speed or device 
+  
+
